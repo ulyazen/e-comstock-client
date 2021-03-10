@@ -33,7 +33,12 @@
         <form @submit.prevent="store()">
           <div class="mb-3">
             <label for="" class="from-label">Nama Bangsal</label>
-            <input type="text" class="form-control" v-model="bangsal.nama" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Nama Bangsal"
+              v-model="bangsal.nama"
+            />
             <div v-if="validation.nama" class="text-danger">
               {{ validation.nama[0] }}
             </div>
@@ -44,6 +49,7 @@
               <div v-if="validation.siklus" class="text-danger">
                 {{ validation.siklus }}
               </div>
+              <option value="" selected hidden>Pilih Siklus Makananan</option>
               <option value="1">1</option>
               <option value="2">2</option>
               <option value="3">3</option>

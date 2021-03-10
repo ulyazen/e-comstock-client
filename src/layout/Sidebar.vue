@@ -83,5 +83,12 @@
   </nav>
 </template>
 <script>
-export default {};
+import $ from "jquery";
+export default {
+  watch: {
+    $route() {
+      $("#sidebarMenu").collapse("hide");
+    },
+  },
+};
 </script>

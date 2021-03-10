@@ -58,6 +58,11 @@
             </tbody>
           </table>
         </div>
+        <div v-if="pasien.length === 0" class="d-flex justify-content-center">
+          <div class="spinner-border" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>

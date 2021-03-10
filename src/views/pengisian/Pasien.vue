@@ -34,6 +34,7 @@
           <div class="mb-3">
             <label for="" class="from-label">Nama Pasien</label>
             <input
+              placeholder="Nama Pasien"
               type="text"
               class="form-control"
               v-model="tambah_pasien.nama"
@@ -43,13 +44,11 @@
             </div>
             <label for="" class="from-label">Nomor Rekam Medis</label>
             <input
+              placeholder="Nomor Rekam Medis"
               type="text"
               class="form-control"
               v-model="tambah_pasien.no_rekam_medis"
             />
-            <div v-if="validation.nama" class="text-danger">
-              {{ validation.nama[0] }}
-            </div>
           </div>
           <input type="hidden" v-model="tambah_pasien.id_bangsal" />
           <button class="btn btn-primary">Submit</button>
@@ -124,7 +123,11 @@
               </div>
             </li>
           </ul>
-          <h4 v-if="tampil.length === 0">Empty list.</h4>
+          <div v-if="tampil.length === 0" class="d-flex justify-content-center">
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

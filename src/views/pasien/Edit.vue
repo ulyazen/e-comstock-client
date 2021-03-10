@@ -41,6 +41,7 @@
           <div class="mb-3">
             <label for="" class="from-label">Nomor Rekam Medis</label>
             <input
+              placeholder="Nomor Rekam Medis"
               type="text"
               class="form-control"
               v-model="pasien.no_rekam_medis"

@@ -13,7 +13,12 @@
             <form @submit.prevent="store()">
               <div class="mb-3">
                 <label for="" class="from-label">Nama Pasien</label>
-                <input type="text" class="form-control" v-model="pasien.nama" />
+                <input
+                  type="text"
+                  placeholder="Nama Pasien"
+                  class="form-control"
+                  v-model="pasien.nama"
+                />
                 <div v-if="validation.nama" class="text-danger">
                   {{ validation.nama[0] }}
                 </div>
