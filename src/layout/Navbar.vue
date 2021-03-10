@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+  <nav class="navbar navbar-dark sticky-top bg-info flex-md-nowrap p-0 shadow">
     <router-link
       :to="{
         name: 'dashboard.index',
