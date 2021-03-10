@@ -81,6 +81,11 @@ const routes = [
         name: "hasil.index",
         component: () => import("../views/hasil/Index.vue"),
       },
+      {
+        path: "/hasil/bangsal/:id",
+        name: "hasil.bangsal",
+        component: () => import("../views/hasil/Bangsal.vue"),
+      },
     ],
   },
   // {

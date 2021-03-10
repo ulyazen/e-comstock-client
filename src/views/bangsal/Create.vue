@@ -4,7 +4,7 @@
       <div class="col-12">
         <router-link
           :to="{ name: 'bangsal.index' }"
-          class="btn btn-primary btn-sm rounded shadow mb-3"
+          class="btn btn-info btn-sm rounded shadow mb-3"
           >Back</router-link
         >
         <div class="card rounded shadow">
@@ -56,7 +56,7 @@
                   {{ validation.tanggal[0] }}
                 </div>
               </div>
-              <button class="btn btn-primary">Submit</button>
+              <button class="btn btn-info">Submit</button>
             </form>
           </div>
         </div>

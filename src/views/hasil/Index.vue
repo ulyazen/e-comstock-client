@@ -44,8 +44,45 @@
               data-parent="#accordionExample"
             >
               <div class="card-body">
-                And lastly, the placeholder content for the third and final
-                accordion panel. This panel is hidden by default.
+                <div class="table-responsive">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>Nama Bangsal</th>
+                        <th>Siklus</th>
+                        <th>Tanggal</th>
+                        <th>Hasil Penilaian</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr v-for="(bangsal, index) in bangsal.data" :key="index">
+                        <td>{{ bangsal.nama }}</td>
+                        <td>{{ bangsal.siklus }}</td>
+                        <td>{{ bangsal.tanggal }}</td>
+                        <td>
+                          <div class="btn-group">
+                            <router-link
+                              :to="{
+                                name: 'hasil.bangsal',
+                                params: { id: bangsal.id, nama: bangsal.nama },
+                              }"
+                              class="btn btn-sm btn-outline-info"
+                              >Olah Data</router-link
+                            >
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div
+                  v-if="bangsal.length === 0"
+                  class="d-flex justify-content-center"
+                >
+                  <div class="spinner-border" role="status">
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -78,7 +115,7 @@
                         <th>Nama Bangsal</th>
                         <th>Siklus</th>
                         <th>Tanggal</th>
-                        <th>Pengisian</th>
+                        <th>Hasil</th>
                       </tr>
                     </thead>
                   </table>
@@ -120,6 +157,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import { onMounted, ref } from "vue";
 import $ from "jquery";
 
@@ -129,6 +167,14 @@ export default {
     let bangsal = ref([]);
 
     onMounted(async () => {
+      await axios
+        .get("https://e-comstock.herokuapp.com/api/bangsal")
+        .then((result) => {
+          bangsal.value = result.data;
+        })
+        .catch((err) => {
+          console.log(err.response);
+        });
       $("#example").DataTable({
         processing: true,
         serverSide: true,

@@ -21,7 +21,7 @@
       <div class="card-header">
         <router-link
           :to="{ name: 'pengisian.bangsal' }"
-          class="my-3 btn btn-primary btn-sm rounded mb-3"
+          class="my-3 btn btn-info btn-sm rounded mb-3"
           >Buat File Baru</router-link
         >
       </div>
@@ -48,7 +48,7 @@
                         name: 'pengisian.pasien',
                         params: { id: bangsal.id, nama: bangsal.nama },
                       }"
-                      class="btn btn-sm btn-outline-primary"
+                      class="btn btn-sm btn-outline-info"
                       >Data Pasien</router-link
                     >
                   </div>

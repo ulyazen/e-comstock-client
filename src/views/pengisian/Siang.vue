@@ -484,7 +484,7 @@
               </div>
             </li>
           </ul>
-          <button class="btn btn-primary my-3">Submit</button>
+          <button class="btn btn-info my-3">Submit</button>
         </form>
       </div>
     </div>

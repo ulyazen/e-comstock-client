@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.2",
+    "apexcharts": "^3.25.0",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "core-js": "^3.6.5",
@@ -18,7 +19,8 @@
     "jszip": "^3.6.0",
     "popper.js": "^1.16.1",
     "vue": "^3.0.0",
-    "vue-router": "^4.0.4"
+    "vue-router": "^4.0.4",
+    "vue3-apexcharts": "^1.2.1"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "~4.5.0",

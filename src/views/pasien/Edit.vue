@@ -47,7 +47,7 @@
               v-model="pasien.no_rekam_medis"
             />
           </div>
-          <button class="btn btn-primary">Submit</button>
+          <button class="btn btn-info">Submit</button>
         </form>
       </div>
     </div>

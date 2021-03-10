@@ -42,6 +42,8 @@
             <div v-if="validation.nama" class="text-danger">
               {{ validation.nama[0] }}
             </div>
+          </div>
+          <div class="mb-3">
             <label for="" class="from-label">Nomor Rekam Medis</label>
             <input
               placeholder="Nomor Rekam Medis"
@@ -51,7 +53,7 @@
             />
           </div>
           <input type="hidden" v-model="tambah_pasien.id_bangsal" />
-          <button class="btn btn-primary">Submit</button>
+          <button class="btn btn-info">Submit</button>
         </form>
         <div class="my-3 border-top">
           <h2 class="my-3">Daftar Pasien Bangsal {{ bangsal.nama_bangsal }}</h2>
@@ -83,7 +85,7 @@
                         id_bangsal: tampil.id_bangsal,
                       },
                     }"
-                    class="btn btn-outline-primary btn-sm btn-block"
+                    class="btn btn-outline-info btn-sm btn-block"
                     >Sisa Makanan Pagi</router-link
                   >
                   <router-link
@@ -94,7 +96,7 @@
                         id_bangsal: tampil.id_bangsal,
                       },
                     }"
-                    class="btn btn-outline-primary btn-sm btn-block"
+                    class="btn btn-outline-info btn-sm btn-block"
                     >Sisa Makanan Siang</router-link
                   >
                   <router-link
@@ -105,7 +107,7 @@
                         id_bangsal: tampil.id_bangsal,
                       },
                     }"
-                    class="btn btn-outline-primary btn-sm btn-block"
+                    class="btn btn-outline-info btn-sm btn-block"
                     >Sisa Makanan Malam</router-link
                   >
                   <router-link
@@ -116,7 +118,7 @@
                         id_bangsal: tampil.id_bangsal,
                       },
                     }"
-                    class="btn btn-outline-primary btn-sm btn-block"
+                    class="btn btn-outline-info btn-sm btn-block"
                     >Tampilkan Data</router-link
                   >
                 </div>
