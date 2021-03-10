@@ -41,6 +41,15 @@
             <div v-if="validation.nama" class="text-danger">
               {{ validation.nama[0] }}
             </div>
+           <label for="" class="from-label">Nomor Rekam Medis</label>
+            <input
+              type="text"
+              class="form-control"
+              v-model="tambah_pasien.no_rekam_medis"
+            />
+            <div v-if="validation.nama" class="text-danger">
+              {{ validation.nama[0] }}
+            </div>
           </div>
           <input type="hidden" v-model="tambah_pasien.id_bangsal" />
           <button class="btn btn-primary">Submit</button>
@@ -56,7 +65,8 @@
             <li
               class="list-group-item d-flex justify-content-between align-items-center"
             >
-              {{ tampil.nama }}
+              {{ tampil.nama }} |
+              {{ tampil.no_rekam_medis }}
 
               <div class="btn-group">
                 <div class="justify-content">
@@ -127,6 +137,7 @@ export default {
     let tambah_pasien = reactive({
       nama: "",
       id_bangsal: "",
+      no_rekam_medis : "",
     });
     let tampil = ref([]);
     const validation = ref([]);
@@ -161,6 +172,7 @@ export default {
         .post("https://e-comstock.herokuapp.com/api/pasien", tambah_pasien)
         .then(() => {
           tambah_pasien.nama = "";
+          tambah_pasien.no_rekam_medis = "";
           getData();
         });
     }

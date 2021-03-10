@@ -136,7 +136,7 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: "http://127.0.0.1:8000/api/bangsalDataTable",
+          url: "https://e-comstock.herokuapp.com/api/bangsalDataTable",
           type: "GET",
         },
         dom: "Bfrtip",
@@ -156,4 +156,3 @@ export default {
   },
 };
 </script>
-

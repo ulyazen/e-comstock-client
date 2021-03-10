@@ -1,10 +1,22 @@
 <template>
   <div class="container my-3">
-    <router-link
-      :to="{ name: 'bangsal.create' }"
-      class="btn btn-primary btn-sm rounded shadow mb-3"
-      >Buat File Baru</router-link
-    >
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+          <router-link
+            :to="{
+              name: 'dashboard.index',
+            }"
+            class="breadcrumb-item"
+          >
+            Dashboard</router-link
+          >
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">
+          Data Bangsal
+        </li>
+      </ol>
+    </nav>
     <div class="card">
       <div class="card-header">Data Bangsal</div>
       <div class="card-body">
@@ -30,11 +42,11 @@
                         name: 'bangsal.edit',
                         params: { id: bangsal.id },
                       }"
-                      class="btn btn-sm btn-info"
+                      class="btn btn-sm btn-outline-info"
                       >Edit</router-link
                     >
                     <button
-                      class="btn btn-sm btn-danger"
+                      class="btn btn-sm btn-outline-danger"
                       @click.prevent="destroy(bangsal.id, index)"
                     >
                       Hapus
