@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-3">
+  <div class="my-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -42,11 +42,11 @@
                         name: 'bangsal.edit',
                         params: { id: bangsal.id },
                       }"
-                      class="btn btn-sm btn-outline-info"
+                      class="btn btn-outline-info"
                       >Edit</router-link
                     >
                     <button
-                      class="btn btn-sm btn-outline-danger"
+                      class="btn btn btn-outline-danger"
                       @click.prevent="destroy(bangsal.id, index)"
                     >
                       Hapus

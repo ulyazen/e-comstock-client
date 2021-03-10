@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-3">
+  <div class=" my-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -41,7 +41,7 @@
             <div v-if="validation.nama" class="text-danger">
               {{ validation.nama[0] }}
             </div>
-           <label for="" class="from-label">Nomor Rekam Medis</label>
+            <label for="" class="from-label">Nomor Rekam Medis</label>
             <input
               type="text"
               class="form-control"
@@ -65,8 +65,14 @@
             <li
               class="list-group-item d-flex justify-content-between align-items-center"
             >
-              {{ tampil.nama }} |
-              {{ tampil.no_rekam_medis }}
+              <div class="card border-0" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">{{ tampil.nama }}</h5>
+                  <p class="card-text">
+                    {{ tampil.no_rekam_medis }}
+                  </p>
+                </div>
+              </div>
 
               <div class="btn-group">
                 <div class="justify-content">
@@ -130,6 +136,11 @@ import { reactive, ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
 export default {
+  data: function() {
+    return {
+      isChecked: false,
+    };
+  },
   setup() {
     const bangsal = reactive({
       nama_bangsal: "",
@@ -137,7 +148,7 @@ export default {
     let tambah_pasien = reactive({
       nama: "",
       id_bangsal: "",
-      no_rekam_medis : "",
+      no_rekam_medis: "",
     });
     let tampil = ref([]);
     const validation = ref([]);

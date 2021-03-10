@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-3">
+  <div class="my-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -39,19 +39,12 @@
             </div>
           </div>
           <div class="mb-3">
-            <label for="" class="from-label">Siklus</label>
-            <select id="" class="custom-select" v-model="pasien.id_bangsal">
-              <option value="1">1</option>
-              <option value="2">2</option>
-              <option value="3">3</option>
-              <option value="4">4</option>
-              <option value="5">5</option>
-              <option value="6">6</option>
-              <option value="7">7</option>
-            </select>
-            <div v-if="validation.id_bangsal" class="text-danger">
-              {{ validation.id_bangsal[0] }}
-            </div>
+            <label for="" class="from-label">Nomor Rekam Medis</label>
+            <input
+              type="text"
+              class="form-control"
+              v-model="pasien.no_rekam_medis"
+            />
           </div>
           <button class="btn btn-primary">Submit</button>
         </form>
@@ -70,6 +63,7 @@ export default {
     let pasien = reactive({
       nama: "",
       id_bangsal: "",
+      no_rekam_medis: "",
     });
     const validation = ref([]);
     const router = useRouter();
@@ -80,6 +74,7 @@ export default {
         .then((result) => {
           pasien.nama = result.data.data.nama;
           pasien.id_bangsal = result.data.data.id_bangsal;
+          pasien.no_rekam_medis = result.data.data.no_rekam_medis;
         })
         .catch((err) => {
           console.log(err.response.data);

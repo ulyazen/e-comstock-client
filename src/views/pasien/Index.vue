@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-3">
+  <div class="my-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">

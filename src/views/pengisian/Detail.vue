@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-3">
+  <div class="my-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -45,17 +45,17 @@
             </thead>
             <tbody>
               <tr v-for="(tampil_pagi, index) in tampil_pagi.data" :key="index">
-                <td v-if="tampil_pagi.makanan_pokok == NULL">Kosong</td>
+                <td v-if="tampil_pagi.makanan_pokok == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_pagi.makanan_pokok }}%</td>
-                <td v-if="tampil_pagi.lauk_hewani == NULL">Kosong</td>
+                <td v-if="tampil_pagi.lauk_hewani == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_pagi.lauk_hewani }}%</td>
-                <td v-if="tampil_pagi.lauk_nabati == NULL">Kosong</td>
+                <td v-if="tampil_pagi.lauk_nabati == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_pagi.lauk_nabati }}%</td>
-                <td v-if="tampil_pagi.sayur == NULL">Kosong</td>
+                <td v-if="tampil_pagi.sayur == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_pagi.sayur }}%</td>
-                <td v-if="tampil_pagi.buah == NULL">Kosong</td>
+                <td v-if="tampil_pagi.buah == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_pagi.buah }}%</td>
-                <td v-if="tampil_pagi.snack == NULL">Kosong</td>
+                <td v-if="tampil_pagi.snack == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_pagi.snack }}%</td>
               </tr>
             </tbody>
@@ -83,17 +83,19 @@
                 v-for="(tampil_siang, index) in tampil_siang.data"
                 :key="index"
               >
-                <td v-if="tampil_siang.makanan_pokok == NULL">Kosong</td>
+                <td v-if="tampil_siang.makanan_pokok == NULL">
+                  Tidak Tersedia
+                </td>
                 <td v-else>{{ tampil_siang.makanan_pokok }}%</td>
-                <td v-if="tampil_siang.lauk_hewani == NULL">Kosong</td>
+                <td v-if="tampil_siang.lauk_hewani == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_siang.lauk_hewani }}%</td>
-                <td v-if="tampil_siang.lauk_nabati == NULL">Kosong</td>
+                <td v-if="tampil_siang.lauk_nabati == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_siang.lauk_nabati }}%</td>
-                <td v-if="tampil_siang.sayur == NULL">Kosong</td>
+                <td v-if="tampil_siang.sayur == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_siang.sayur }}%</td>
-                <td v-if="tampil_siang.buah == NULL">Kosong</td>
+                <td v-if="tampil_siang.buah == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_siang.buah }}%</td>
-                <td v-if="tampil_siang.snack == NULL">Kosong</td>
+                <td v-if="tampil_siang.snack == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_siang.snack }}%</td>
               </tr>
             </tbody>
@@ -121,18 +123,20 @@
                 v-for="(tampil_malam, index) in tampil_malam.data"
                 :key="index"
               >
-                <td v-if="tampil_malam.makanan_pokok == NULL">Kosong</td>
+                <td v-if="tampil_malam.makanan_pokok == NULL">
+                  Tidak Tersedia
+                </td>
                 <td v-else>{{ tampil_malam.makanan_pokok }}%</td>
-                <td v-if="tampil_malam.lauk_hewani == NULL">Kosong</td>
+                <td v-if="tampil_malam.lauk_hewani == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_malam.lauk_hewani }}%</td>
-                <td v-if="tampil_malam.lauk_nabati == NULL">Kosong</td>
+                <td v-if="tampil_malam.lauk_nabati == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_malam.lauk_nabati }}%</td>
-                <td v-if="tampil_malam.sayur == NULL">Kosong</td>
+                <td v-if="tampil_malam.sayur == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_malam.sayur }}%</td>
-                <td v-if="tampil_malam.buah == NULL">Kosong</td>
+                <td v-if="tampil_malam.buah == NULL">Tidak Tersedia</td>
                 <td v-else>{{ tampil_malam.buah }}%</td>
-                <td v-if="tampil_malam.snack == NULL">Kosong</td>
-                <td v-else>{{ tampil_pagi.snack }}%</td>
+                <td v-if="tampil_malam.snack == NULL">Tidak Tersedia</td>
+                <td v-else>{{ tampil_malam.snack }}%</td>
               </tr>
             </tbody>
           </table>

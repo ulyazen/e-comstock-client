@@ -1,5 +1,5 @@
 <template>
-  <div class="container my-3">
+  <div class="my-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -95,8 +95,14 @@
                       <span class="form-radio-sign mx-1">100%</span>
                     </label>
                     <label class="form-radio-label mx-4 my-1">
-                      <input class="form-radio-input" type="radio" />
-                      <span class="form-radio-sign mx-1">Tidak Tersedia</span>
+                      <input
+                        class="form-radio-input"
+                        type="radio"
+                        :checked="isChecked"
+                        value=""
+                        v-model="pengisian.makanan_pokok"
+                      />
+                      <span class="form-radio-sign mx-1">Tidak tersedia</span>
                     </label>
                   </div>
                 </div>
@@ -164,7 +170,13 @@
                       <span class="form-radio-sign mx-1">100%</span>
                     </label>
                     <label class="form-radio-label mx-4 my-1">
-                      <input class="form-radio-input" type="radio" />
+                      <input
+                        class="form-radio-input"
+                        type="radio"
+                        :checked="isChecked"
+                        value=""
+                        v-model="pengisian.lauk_hewani"
+                      />
                       <span class="form-radio-sign mx-1">Tidak Tersedia</span>
                     </label>
                   </div>
@@ -233,7 +245,13 @@
                       <span class="form-radio-sign mx-1">100%</span>
                     </label>
                     <label class="form-radio-label mx-4 my-1">
-                      <input class="form-radio-input" type="radio" />
+                      <input
+                        class="form-radio-input"
+                        type="radio"
+                        :checked="isChecked"
+                        value=""
+                        v-model="pengisian.lauk_nabati"
+                      />
                       <span class="form-radio-sign mx-1">Tidak Tersedia</span>
                     </label>
                   </div>
@@ -302,7 +320,13 @@
                       <span class="form-radio-sign mx-1">100%</span>
                     </label>
                     <label class="form-radio-label mx-4 my-1">
-                      <input class="form-radio-input" type="radio" />
+                      <input
+                        class="form-radio-input"
+                        type="radio"
+                        :checked="isChecked"
+                        value=""
+                        v-model="pengisian.sayur"
+                      />
                       <span class="form-radio-sign mx-1">Tidak Tersedia</span>
                     </label>
                   </div>
@@ -371,7 +395,13 @@
                       <span class="form-radio-sign mx-1">100%</span>
                     </label>
                     <label class="form-radio-label mx-4 my-1">
-                      <input class="form-radio-input" type="radio" />
+                      <input
+                        class="form-radio-input"
+                        type="radio"
+                        :checked="isChecked"
+                        value=""
+                        v-model="pengisian.buah"
+                      />
                       <span class="form-radio-sign mx-1">Tidak Tersedia</span>
                     </label>
                   </div>
@@ -440,7 +470,13 @@
                       <span class="form-radio-sign mx-1">100%</span>
                     </label>
                     <label class="form-radio-label mx-4 my-1">
-                      <input class="form-radio-input" type="radio" />
+                      <input
+                        class="form-radio-input"
+                        type="radio"
+                        :checked="isChecked"
+                        value=""
+                        v-model="pengisian.snack"
+                      />
                       <span class="form-radio-sign mx-1">Tidak Tersedia</span>
                     </label>
                   </div>
@@ -460,8 +496,14 @@ import { reactive, ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
 export default {
+  data: function() {
+    return {
+      isChecked: false,
+    };
+  },
   setup() {
     const pengisian = reactive({
+      kosong: "",
       id_bangsal: "",
       id_pasien: "",
       makanan_pokok: "",
