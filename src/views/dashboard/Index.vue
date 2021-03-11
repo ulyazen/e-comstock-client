@@ -78,7 +78,7 @@
       <div class="col mb-4">
         <div class="card border-info w-100">
           <div class="card-header border-info">
-            Grafik Sisa Makanan
+            Rata-rata Grafik Sisa Makanan
           </div>
           <div class="card-body border-info">
             <apexchart :options="chartOptions" :series="series"></apexchart>
