@@ -119,8 +119,9 @@
                       },
                     }"
                     class="btn btn-outline-info btn-sm btn-block"
-                    >Tampilkan Data</router-link
-                  >
+                    >Tampilkan Data
+                    {{ tampil.length === 0 }}
+                  </router-link>
                 </div>
               </div>
             </li>
