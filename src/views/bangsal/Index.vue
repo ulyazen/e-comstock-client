@@ -12,9 +12,7 @@
             Dashboard</router-link
           >
         </li>
-        <li class="breadcrumb-item active" aria-current="page">
-          Data Bangsal
-        </li>
+        <li class="breadcrumb-item active" aria-current="page">Data Bangsal</li>
       </ol>
     </nav>
     <div class="card">
@@ -27,7 +25,7 @@
                 <th>Nama Bangsal</th>
                 <th>Siklus</th>
                 <th>Tanggal</th>
-                <th>Action</th>
+                <th>Aksi</th>
               </tr>
             </thead>
             <tbody>
@@ -42,11 +40,11 @@
                         name: 'bangsal.edit',
                         params: { id: bangsal.id },
                       }"
-                      class="btn btn-outline-info"
+                      class="btn btn-sm btn-outline-info"
                       >Edit</router-link
                     >
                     <button
-                      class="btn btn btn-outline-danger"
+                      class="btn btn-sm btn-outline-danger"
                       @click.prevent="destroy(bangsal.id, index)"
                     >
                       Hapus

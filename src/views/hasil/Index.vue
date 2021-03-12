@@ -112,10 +112,13 @@
                   <table class="table" style="width: 100%" id="example">
                     <thead>
                       <tr>
-                        <th>Nama Bangsal</th>
                         <th>Siklus</th>
-                        <th>Tanggal</th>
-                        <th>Hasil</th>
+                        <th>Makanan Pokok</th>
+                        <th>Lauk Hewani</th>
+                        <th>Lauk Nabati</th>
+                        <th>Sayur</th>
+                        <th>Buah</th>
+                        <th>Snack</th>
                       </tr>
                     </thead>
                   </table>
@@ -182,16 +185,19 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: "https://e-comstock.herokuapp.com/api/bangsalDataTable",
+          url: "https://e-comstock.herokuapp.com/api/pasienAvgSisa",
           type: "GET",
         },
         dom: "Bfrtip",
         buttons: ["excel", "print"],
         columns: [
-          { data: "nama", name: "nama" },
           { data: "siklus", name: "siklus" },
-          { data: "tanggal", name: "tanggal" },
-          { data: "created_at", name: "created_at" },
+          { data: "makanan_pokok", name: "makanan_pokok" },
+          { data: "lauk_hewani", name: "lauk_hewani" },
+          { data: "lauk_nabati", name: "lauk_nabati" },
+          { data: "sayur", name: "sayur" },
+          { data: "buah", name: "buah" },
+          { data: "snack", name: "snack" },
         ],
       });
     });

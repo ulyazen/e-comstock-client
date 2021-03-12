@@ -1,5 +1,5 @@
 <template>
-  <div class=" my-3">
+  <div class="my-3">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -66,7 +66,7 @@
             <li
               class="list-group-item d-flex justify-content-between align-items-center"
             >
-              <div class="card border-0" style="width: 18rem;">
+              <div class="card border-0" style="width: 18rem">
                 <div class="card-body">
                   <h5 class="card-title">{{ tampil.nama }}</h5>
                   <p class="card-text">
@@ -120,7 +120,6 @@
                     }"
                     class="btn btn-outline-info btn-sm btn-block"
                     >Tampilkan Data
-                    {{ tampil.length === 0 }}
                   </router-link>
                 </div>
               </div>
@@ -142,7 +141,7 @@ import { reactive, ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
 export default {
-  data: function() {
+  data: function () {
     return {
       isChecked: false,
     };
