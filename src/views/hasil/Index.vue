@@ -109,7 +109,7 @@
             >
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table" style="width: 100%" id="example">
+                  <table class="table" style="width: 100%" id="rataMakanan">
                     <thead>
                       <tr>
                         <th>Siklus</th>
@@ -148,8 +148,51 @@
               data-parent="#accordionExample"
             >
               <div class="card-body">
-                And lastly, the placeholder content for the third and final
-                accordion panel. This panel is hidden by default.
+                <div class="table-responsive">
+                  <table class="table" style="width: 100%" id="rata">
+                    <thead>
+                      <tr>
+                        <th>Siklus</th>
+                        <th>Rata-rata</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link btn-block text-left collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseFour"
+                  aria-expanded="false"
+                  aria-controls="collapseFour"
+                >
+                  Rata-rata Lengkap
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseFour"
+              class="collapse"
+              aria-labelledby="headingFour"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table" style="width: 100%" id="rata">
+                    <thead>
+                      <tr>
+                        <th>Siklus</th>
+                        <th>Rata-rata</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
@@ -178,7 +221,29 @@ export default {
         .catch((err) => {
           console.log(err.response);
         });
-      $("#example").DataTable({
+      $("#rataMakanan").DataTable({
+        processing: true,
+        serverSide: true,
+        searching: false,
+        paging: false,
+        info: false,
+        ajax: {
+          url: "https://e-comstock.herokuapp.com/api/pasienAvgSisaMakanan",
+          type: "GET",
+        },
+        dom: "Bfrtip",
+        buttons: ["excel", "print"],
+        columns: [
+          { data: "siklus", name: "siklus" },
+          { data: "makanan_pokok", name: "makanan_pokok" },
+          { data: "lauk_hewani", name: "lauk_hewani" },
+          { data: "lauk_nabati", name: "lauk_nabati" },
+          { data: "sayur", name: "sayur" },
+          { data: "buah", name: "buah" },
+          { data: "snack", name: "snack" },
+        ],
+      });
+      $("#rata").DataTable({
         processing: true,
         serverSide: true,
         searching: false,
@@ -192,12 +257,7 @@ export default {
         buttons: ["excel", "print"],
         columns: [
           { data: "siklus", name: "siklus" },
-          { data: "makanan_pokok", name: "makanan_pokok" },
-          { data: "lauk_hewani", name: "lauk_hewani" },
-          { data: "lauk_nabati", name: "lauk_nabati" },
-          { data: "sayur", name: "sayur" },
-          { data: "buah", name: "buah" },
-          { data: "snack", name: "snack" },
+          { data: "ratarata", name: "ratarata" },
         ],
       });
     });
