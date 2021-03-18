@@ -194,18 +194,22 @@
                         <th>Sayur Pagi</th>
                         <th>Buah Pagi</th>
                         <th>Snack Pagi</th>
+                        <th>Rata-rata Pagi</th>
                         <th>Makanan Pokok Siang</th>
                         <th>Lauk Hewani Siang</th>
                         <th>Lauk Nabati Siang</th>
                         <th>Sayur Siang</th>
                         <th>Buah Siang</th>
                         <th>Snack Siang</th>
+                        <th>Rata-rata Siang</th>
                         <th>Makanan Pokok Malam</th>
                         <th>Lauk Hewani Malam</th>
                         <th>Lauk Nabati Malam</th>
                         <th>Sayur Malam</th>
                         <th>Buah Malam</th>
                         <th>Snack Malam</th>
+                        <th>Rata-rata Malam</th>
+                        <th>Rata-rata Keseluruhan</th>
                       </tr>
                     </thead>
                   </table>
@@ -322,6 +326,10 @@ export default {
           { data: "sayur_malam", name: "sayur_malam" },
           { data: "buah_malam", name: "buah_malam" },
           { data: "snack_malam", name: "snack_malam" },
+          { data: "ratarata_pagi", name: "ratarata_pagi" },
+          { data: "ratarata_siang", name: "ratarata_siang" },
+          { data: "ratarata_malam", name: "ratarata_malam" },
+          { data: "ratarata", name: "ratarata" },
         ],
         rowCallback: function (row, data) {
           $("td:eq(1)", row).html(
@@ -376,6 +384,18 @@ export default {
             parseFloat(data.buah_malam).toPrecision(3) + "%"
           );
           $("td:eq(18)", row).html(
+            parseFloat(data.snack_malam).toPrecision(3) + "%"
+          );
+          $("td:eq(19)", row).html(
+            parseFloat(data.lauk_nabati_malam).toPrecision(3) + "%"
+          );
+          $("td:eq(20)", row).html(
+            parseFloat(data.sayur_malam).toPrecision(3) + "%"
+          );
+          $("td:eq(21)", row).html(
+            parseFloat(data.buah_malam).toPrecision(3) + "%"
+          );
+          $("td:eq(22)", row).html(
             parseFloat(data.snack_malam).toPrecision(3) + "%"
           );
         },
