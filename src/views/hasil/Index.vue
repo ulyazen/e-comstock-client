@@ -19,7 +19,7 @@
       </ol>
     </nav>
     <div class="card">
-      <div class="card-header">Data Bangsal</div>
+      <div class="card-header">Hasil Penilaian</div>
       <div class="card-body">
         <div class="accordion" id="accordionExample">
           <div class="card">
