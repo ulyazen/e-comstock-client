@@ -351,52 +351,52 @@ export default {
             parseFloat(data.snack_pagi).toPrecision(3) + "%"
           );
           $("td:eq(7)", row).html(
-            parseFloat(data.makanan_pokok_siang).toPrecision(3) + "%"
+            parseFloat(data.ratarata_pagi).toPrecision(3) + "%"
           );
           $("td:eq(8)", row).html(
-            parseFloat(data.lauk_hewani_siang).toPrecision(3) + "%"
+            parseFloat(data.makanan_pokok_siang).toPrecision(3) + "%"
           );
           $("td:eq(9)", row).html(
-            parseFloat(data.lauk_nabati_siang).toPrecision(3) + "%"
+            parseFloat(data.lauk_hewani_siang).toPrecision(3) + "%"
           );
           $("td:eq(10)", row).html(
-            parseFloat(data.sayur_siang).toPrecision(3) + "%"
+            parseFloat(data.lauk_nabati_siang).toPrecision(3) + "%"
           );
           $("td:eq(11)", row).html(
-            parseFloat(data.buah_siang).toPrecision(3) + "%"
+            parseFloat(data.sayur_siang).toPrecision(3) + "%"
           );
           $("td:eq(12)", row).html(
-            parseFloat(data.snack_siang).toPrecision(3) + "%"
+            parseFloat(data.buah_siang).toPrecision(3) + "%"
           );
           $("td:eq(13)", row).html(
-            parseFloat(data.makanan_pokok_malam).toPrecision(3) + "%"
+            parseFloat(data.snack_siang).toPrecision(3) + "%"
           );
           $("td:eq(14)", row).html(
-            parseFloat(data.lauk_hewani_malam).toPrecision(3) + "%"
+            parseFloat(data.ratarata_siang).toPrecision(3) + "%"
           );
           $("td:eq(15)", row).html(
-            parseFloat(data.lauk_nabati_malam).toPrecision(3) + "%"
+            parseFloat(data.makanan_pokok_malam).toPrecision(3) + "%"
           );
           $("td:eq(16)", row).html(
-            parseFloat(data.sayur_malam).toPrecision(3) + "%"
+            parseFloat(data.lauk_hewani_malam).toPrecision(3) + "%"
           );
           $("td:eq(17)", row).html(
-            parseFloat(data.buah_malam).toPrecision(3) + "%"
-          );
-          $("td:eq(18)", row).html(
-            parseFloat(data.snack_malam).toPrecision(3) + "%"
-          );
-          $("td:eq(19)", row).html(
             parseFloat(data.lauk_nabati_malam).toPrecision(3) + "%"
           );
-          $("td:eq(20)", row).html(
+          $("td:eq(18)", row).html(
             parseFloat(data.sayur_malam).toPrecision(3) + "%"
           );
-          $("td:eq(21)", row).html(
+          $("td:eq(19)", row).html(
             parseFloat(data.buah_malam).toPrecision(3) + "%"
           );
-          $("td:eq(22)", row).html(
+          $("td:eq(20)", row).html(
             parseFloat(data.snack_malam).toPrecision(3) + "%"
+          );
+          $("td:eq(21)", row).html(
+            parseFloat(data.ratarata_malam).toPrecision(3) + "%"
+          );
+          $("td:eq(22)", row).html(
+            parseFloat(data.ratarata).toPrecision(3) + "%"
           );
         },
       });
