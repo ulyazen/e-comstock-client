@@ -43,6 +43,7 @@
                 <th>Snack</th>
               </tr>
             </thead>
+
             <tbody>
               <tr v-for="(tampil_pagi, index) in tampil_pagi.data" :key="index">
                 <td v-if="tampil_pagi.makanan_pokok == NULL">Tidak Tersedia</td>
@@ -60,6 +61,17 @@
               </tr>
             </tbody>
           </table>
+          <div v-if="tampil_pagi.data == 0">
+            <p>Data Sisa Makanan Pagi Belum Diisi.</p>
+          </div>
+          <div
+            v-if="tampil_pagi.length === 0"
+            class="d-flex justify-content-center"
+          >
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -100,6 +112,17 @@
               </tr>
             </tbody>
           </table>
+          <div v-if="tampil_siang.data == 0">
+            <p>Data Sisa Makanan Siang Belum Diisi.</p>
+          </div>
+          <div
+            v-if="tampil_siang.length === 0"
+            class="d-flex justify-content-center"
+          >
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -140,6 +163,17 @@
               </tr>
             </tbody>
           </table>
+          <div v-if="tampil_malam.data == 0">
+            <p>Data Sisa Makanan Malam Belum Diisi.</p>
+          </div>
+          <div
+            v-if="tampil_malam.length === 0"
+            class="d-flex justify-content-center"
+          >
+            <div class="spinner-border" role="status">
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

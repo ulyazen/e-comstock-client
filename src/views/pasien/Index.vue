@@ -12,9 +12,7 @@
             Dashboard</router-link
           >
         </li>
-        <li class="breadcrumb-item active" aria-current="page">
-          Data Pasien
-        </li>
+        <li class="breadcrumb-item active" aria-current="page">Data Pasien</li>
       </ol>
     </nav>
     <div class="card">
@@ -57,6 +55,9 @@
               </tr>
             </tbody>
           </table>
+        </div>
+        <div v-if="bangsal.data == 0">
+          <p>Data Bangsal Pasien Diisi.</p>
         </div>
         <div v-if="pasien.length === 0" class="d-flex justify-content-center">
           <div class="spinner-border" role="status">

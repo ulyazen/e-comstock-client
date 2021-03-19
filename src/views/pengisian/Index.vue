@@ -57,6 +57,9 @@
             </tbody>
           </table>
         </div>
+        <div v-if="bangsal.data == 0">
+          <p>Data Bangsal Belum Diisi.</p>
+        </div>
         <div v-if="bangsal.length === 0" class="d-flex justify-content-center">
           <div class="spinner-border" role="status">
             <span class="sr-only">Loading...</span>

@@ -125,6 +125,9 @@
               </div>
             </li>
           </ul>
+          <div v-if="tampil.data == 0">
+            <p>Data Pasien Belum Diisi.</p>
+          </div>
           <div v-if="tampil.length === 0" class="d-flex justify-content-center">
             <div class="spinner-border" role="status">
               <span class="sr-only">Loading...</span>
