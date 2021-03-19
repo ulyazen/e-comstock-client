@@ -56,7 +56,7 @@
             </tbody>
           </table>
         </div>
-        <div v-if="bangsal.data == 0">
+        <div v-if="pasien.data == 0">
           <p>Data Bangsal Pasien Diisi.</p>
         </div>
         <div v-if="pasien.length === 0" class="d-flex justify-content-center">
