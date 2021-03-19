@@ -484,6 +484,9 @@
               </div>
             </li>
           </ul>
+          <div v-if="validation.id_pasien" class="text-danger">
+            {{ validation.id_pasien[0] }}
+          </div>
           <button class="btn btn-info my-3">Submit</button>
         </form>
       </div>
@@ -496,7 +499,7 @@ import { reactive, ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
 export default {
-  data: function() {
+  data: function () {
     return {
       isChecked: false,
     };
