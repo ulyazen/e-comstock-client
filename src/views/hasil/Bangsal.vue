@@ -44,7 +44,8 @@
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  Rata-rata Sisa Makanan pada Menu Bangsal
+                  Rata-rata Sisa Makanan Bedasarkan Siklus dan Jenis Makanan
+                  Bangsal
                   {{ bangsal.nama_bangsal }}
                 </button>
               </h2>
@@ -86,7 +87,7 @@
                   aria-expanded="false"
                   aria-controls="collapseThree"
                 >
-                  Rata-rata Sisa Menurut Kelompok Makanan pada Menu Bangsal
+                  Rata-rata Sisa Makanan Bedasarkan Siklus Bangsal
                   {{ bangsal.nama_bangsal }}
                 </button>
               </h2>
@@ -214,7 +215,7 @@ export default {
           { data: "buah", name: "buah" },
           { data: "snack", name: "snack" },
         ],
-        rowCallback: function (row, data) {
+        rowCallback: function(row, data) {
           $("td:eq(2)", row).html(
             parseFloat(data.makanan_pokok).toPrecision(3) + "%"
           );
@@ -244,7 +245,7 @@ export default {
           { data: "siklus", name: "siklus" },
           { data: "ratarata", name: "ratarata" },
         ],
-        rowCallback: function (row, data) {
+        rowCallback: function(row, data) {
           $("td:eq(2)", row).html(
             parseFloat(data.ratarata).toPrecision(3) + "%"
           );
@@ -284,7 +285,7 @@ export default {
           { data: "buah_malam", name: "buah_malam" },
           { data: "snack_malam", name: "snack_malam" },
         ],
-        rowCallback: function (row, data) {
+        rowCallback: function(row, data) {
           $("td:eq(4)", row).html(
             parseFloat(data.makanan_pokok_pagi).toPrecision(3) + "%"
           );
