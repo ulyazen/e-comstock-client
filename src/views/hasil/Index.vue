@@ -33,7 +33,7 @@
                   aria-expanded="false"
                   aria-controls="collapseOne"
                 >
-                  Rata-rata Sisa Berdasar Bangsal
+                  Rata-rata Sisa Makanan Bedasarkan Bangsal
                 </button>
               </h2>
             </div>
@@ -100,7 +100,7 @@
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  Rata-rata Sisa Makanan pada Menu Keseluruhan
+                  Rata-rata Sisa Makanan Bedasarkan Siklus dan Jenis Makanan
                 </button>
               </h2>
             </div>
@@ -140,7 +140,7 @@
                   aria-expanded="false"
                   aria-controls="collapseThree"
                 >
-                  Rata-rata Sisa Menurut Kelompok Makanan pada Menu Keseluruhan
+                  Rata-rata Sisa Makanan Bedasarkan Siklus
                 </button>
               </h2>
             </div>
@@ -264,7 +264,7 @@ export default {
           { data: "buah", name: "buah" },
           { data: "snack", name: "snack" },
         ],
-        rowCallback: function (row, data) {
+        rowCallback: function(row, data) {
           $("td:eq(1)", row).html(
             parseFloat(data.makanan_pokok).toPrecision(3) + "%"
           );
@@ -293,7 +293,7 @@ export default {
           { data: "siklus", name: "siklus" },
           { data: "ratarata", name: "ratarata" },
         ],
-        rowCallback: function (row, data) {
+        rowCallback: function(row, data) {
           $("td:eq(1)", row).html(
             parseFloat(data.ratarata).toPrecision(3) + "%"
           );
@@ -334,7 +334,7 @@ export default {
           { data: "ratarata_malam", name: "ratarata_malam" },
           { data: "ratarata", name: "ratarata" },
         ],
-        rowCallback: function (row, data) {
+        rowCallback: function(row, data) {
           $("td:eq(1)", row).html(
             parseFloat(data.makanan_pokok_pagi).toPrecision(3) + "%"
           );
