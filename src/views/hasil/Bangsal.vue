@@ -206,7 +206,7 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: `http://e-comstock.herokuapp.com/api/pasienAvgSisaMakanan/${route.params.id}`,
+          url: `https://e-comstock.herokuapp.com/api/pasienAvgSisaMakanan/${route.params.id}`,
           type: "GET",
           headers: {
             Authorization: "Bearer " + token,
@@ -244,7 +244,7 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: `http://e-comstock.herokuapp.com/api/pasienAvgSisa/${route.params.id}`,
+          url: `https://e-comstock.herokuapp.com/api/pasienAvgSisa/${route.params.id}`,
           type: "GET",
           headers: {
             Authorization: "Bearer " + token,
@@ -268,7 +268,7 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: `http://e-comstock.herokuapp.com/api/pasienAvgLengkap/${route.params.id}`,
+          url: `https://e-comstock.herokuapp.com/api/pasienAvgLengkap/${route.params.id}`,
           type: "GET",
           headers: {
             Authorization: "Bearer " + token,
