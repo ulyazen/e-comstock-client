@@ -38,7 +38,7 @@
             }"
             class="nav-link"
           >
-            <i class="fas fa-file-alt"></i> File Tersimpan</router-link
+            <i class="fas fa-file-signature"></i> File Tersimpan</router-link
           >
         </li>
         <router-link
@@ -74,6 +74,36 @@
             class="nav-link"
           >
             <i class="fas fa-file-alt"></i> Data Pasien</router-link
+          >
+        </li>
+        <li class="nav-item">
+          <router-link
+            :to="{
+              name: 'pasien.index',
+            }"
+            class="nav-link"
+          >
+            <i class="fas fa-file-alt"></i> Data Sisa Makanan Pagi</router-link
+          >
+        </li>
+        <li class="nav-item">
+          <router-link
+            :to="{
+              name: 'pasien.index',
+            }"
+            class="nav-link"
+          >
+            <i class="fas fa-file-alt"></i> Data Sisa Makanan Siang</router-link
+          >
+        </li>
+        <li class="nav-item">
+          <router-link
+            :to="{
+              name: 'pasien.index',
+            }"
+            class="nav-link"
+          >
+            <i class="fas fa-file-alt"></i> Data Sisa Makanan Malam</router-link
           >
         </li>
       </ul>
