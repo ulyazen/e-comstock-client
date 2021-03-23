@@ -2,8 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 
 const routes = [
   {
-    path: "/",
-    redirect: "/dashboard",
+    path: "/dashboard",
     component: () => import("../layout/DashboardLayout.vue"),
     children: [
       {
@@ -88,28 +87,23 @@ const routes = [
       },
     ],
   },
-  // {
-  //   path: "/",
-  //   redirect: "login",
-  //   component: AuthLayout,
-  //   children: [
-  //     {
-  //       path: "/login",
-  //       name: "login.index",
-  //       component: () => import("../views/login/Index.vue"),
-  //     },
-  //     {
-  //       path: "/register",
-  //       name: "register.index",
-  //       component: () => import("../views/register/Index.vue"),
-  //     },
-  //   ],
-  // },
-  // {
-  //   path: '*',
-  //   name: "notFound.index",
-  //   component: () => import("../views/notFound/Index.vue"),
-  // }
+  {
+    path: "/",
+    redirect: "login",
+    component: () => import("../layout/AuthLayout.vue"),
+    children: [
+      {
+        path: "/login",
+        name: "login",
+        component: () => import("../views/auth/Login.vue"),
+      },
+      {
+        path: "/register",
+        name: "register",
+        component: () => import("../views/auth/Register.vue"),
+      },
+    ],
+  },
 ];
 
 const router = createRouter({

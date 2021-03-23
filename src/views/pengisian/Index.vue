@@ -76,12 +76,16 @@ import { onMounted, ref } from "vue";
 
 export default {
   setup() {
-    //reactive state
+    let token = localStorage.getItem("token");
     let bangsal = ref([]);
 
     onMounted(async () => {
       await axios
-        .get("https://e-comstock.herokuapp.com/api/bangsal")
+        .get("/api/bangsal", {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
         .then((result) => {
           bangsal.value = result.data;
         })

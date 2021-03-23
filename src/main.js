@@ -15,7 +15,10 @@ import "datatables.net-buttons/js/buttons.html5.js";
 import "datatables.net-buttons/js/buttons.print.js";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import "@fortawesome/fontawesome-free/js/all.min.js";
-
+import axios from "axios";
+axios.defaults.baseURL = "https://e-comstock.herokuapp.com";
+axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
+axios.defaults.withCredentials = true;
 window.JSZip = jszip;
 const app = createApp(App);
 app.use(router);

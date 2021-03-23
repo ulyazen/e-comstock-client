@@ -83,6 +83,7 @@ import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
 export default {
   setup() {
+    let token = localStorage.getItem("token");
     let bangsal = reactive({
       nama: "",
       siklus: "",
@@ -93,7 +94,11 @@ export default {
     const route = useRoute();
     onMounted(() => {
       axios
-        .get(`https://e-comstock.herokuapp.com/api/bangsal/${route.params.id}`)
+        .get(`/api/bangsal/${route.params.id}`, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
         .then((result) => {
           bangsal.nama = result.data.data.nama;
           bangsal.siklus = result.data.data.siklus;
@@ -103,20 +108,24 @@ export default {
           console.log(err.response.data);
         });
     });
+
     function update() {
-      axios
-        .put(
-          `https://e-comstock.herokuapp.com/api/bangsal/${route.params.id}`,
-          bangsal
-        )
-        .then(() => {
-          router.push({
-            name: "bangsal.index",
+      axios.get("/sanctum/csrf-cookie").then(() => {
+        axios
+          .put(`/api/bangsal/${route.params.id}`, bangsal, {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          })
+          .then(() => {
+            router.push({
+              name: "bangsal.index",
+            });
+          })
+          .catch((err) => {
+            validation.value = err.response.data;
           });
-        })
-        .catch((err) => {
-          validation.value = err.response.data;
-        });
+      });
     }
     return {
       bangsal,

@@ -75,12 +75,16 @@ import { onMounted, ref } from "vue";
 
 export default {
   setup() {
-    //reactive state
+    let token = localStorage.getItem("token");
     let pasien = ref([]);
 
     onMounted(() => {
       axios
-        .get("https://e-comstock.herokuapp.com/api/pasien")
+        .get("/api/pasien", {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
         .then((result) => {
           pasien.value = result.data;
         })
@@ -90,14 +94,20 @@ export default {
     });
 
     function destroy(id, index) {
-      axios
-        .delete(`https://e-comstock.herokuapp.com/api/pasien/${id}`)
-        .then(() => {
-          pasien.value.data.splice(index, 1);
-        })
-        .catch((err) => {
-          console.log(err.response.data);
-        });
+      axios.get("/sanctum/csrf-cookie").then(() => {
+        axios
+          .delete(`api/pasien/${id}`, {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          })
+          .then(() => {
+            pasien.value.data.splice(index, 1);
+          })
+          .catch((err) => {
+            console.log(err.response.data);
+          });
+      });
     }
 
     return {

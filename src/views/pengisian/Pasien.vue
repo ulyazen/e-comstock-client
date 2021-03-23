@@ -144,12 +144,13 @@ import { reactive, ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
 export default {
-  data: function () {
+  data: function() {
     return {
       isChecked: false,
     };
   },
   setup() {
+    let token = localStorage.getItem("token");
     const bangsal = reactive({
       nama_bangsal: "",
     });
@@ -164,7 +165,11 @@ export default {
     const route = useRoute();
     onMounted(() => {
       axios
-        .get(`https://e-comstock.herokuapp.com/api/bangsal/${route.params.id}`)
+        .get(`/api/bangsal/${route.params.id}`, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
         .then((result) => {
           bangsal.nama_bangsal = result.data.data.nama;
           tambah_pasien.id_bangsal = result.data.data.id;
@@ -172,13 +177,16 @@ export default {
         .catch((err) => {
           console.log(err.response.data);
         });
+
       getData();
     });
     function getData() {
       axios
-        .get(
-          `https://e-comstock.herokuapp.com/api/pasienBangsal/${route.params.id}`
-        )
+        .get(`/api/pasienBangsal/${route.params.id}`, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
         .then((result2) => {
           tampil.value = result2.data;
         })
@@ -187,13 +195,19 @@ export default {
         });
     }
     function store() {
-      axios
-        .post("https://e-comstock.herokuapp.com/api/pasien", tambah_pasien)
-        .then(() => {
-          tambah_pasien.nama = "";
-          tambah_pasien.no_rekam_medis = "";
-          getData();
-        });
+      axios.get("/sanctum/csrf-cookie").then(() => {
+        axios
+          .post("/api/pasien", tambah_pasien, {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          })
+          .then(() => {
+            tambah_pasien.nama = "";
+            tambah_pasien.no_rekam_medis = "";
+            getData();
+          });
+      });
     }
     return {
       bangsal,

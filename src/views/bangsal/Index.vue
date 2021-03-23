@@ -74,12 +74,16 @@ import { onMounted, ref } from "vue";
 
 export default {
   setup() {
-    //reactive state
+    let token = localStorage.getItem("token");
     let bangsal = ref([]);
 
     onMounted(() => {
       axios
-        .get("https://e-comstock.herokuapp.com/api/bangsal")
+        .get("/api/bangsal", {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
         .then((result) => {
           bangsal.value = result.data;
         })
@@ -89,14 +93,20 @@ export default {
     });
 
     function destroy(id, index) {
-      axios
-        .delete(`https://e-comstock.herokuapp.com/api/bangsal/${id}`)
-        .then(() => {
-          bangsal.value.data.splice(index, 1);
-        })
-        .catch((err) => {
-          console.log(err.response.data);
-        });
+      axios.get("/sanctum/csrf-cookie").then(() => {
+        axios
+          .delete(`/api/bangsal/${id}`, {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          })
+          .then(() => {
+            bangsal.value.data.splice(index, 1);
+          })
+          .catch((err) => {
+            console.log(err.response.data);
+          });
+      });
     }
 
     return {

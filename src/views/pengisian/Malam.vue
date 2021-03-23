@@ -500,6 +500,7 @@ import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
 export default {
   setup() {
+    let token = localStorage.getItem("token");
     const pengisian = reactive({
       id_bangsal: "",
       id_pasien: "",
@@ -517,16 +518,22 @@ export default {
     pengisian.id_bangsal = route.params.id_bangsal;
     pengisian.id_pasien = route.params.id;
     function store() {
-      axios
-        .post("https://e-comstock.herokuapp.com/api/sisa/malam", pengisian)
-        .then(() => {
-          router.push({
-            name: "pengisian.detail",
+      axios.get("/sanctum/csrf-cookie").then(() => {
+        axios
+          .post("/api/sisa/malam", pengisian, {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          })
+          .then(() => {
+            router.push({
+              name: "pengisian.detail",
+            });
+          })
+          .catch((err) => {
+            validation.value = err.response.data;
           });
-        })
-        .catch((err) => {
-          validation.value = err.response.data;
-        });
+      });
     }
     return {
       pengisian,

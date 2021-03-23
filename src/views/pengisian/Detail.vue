@@ -186,6 +186,7 @@ import { useRoute } from "vue-router";
 import axios from "axios";
 export default {
   setup() {
+    let token = localStorage.getItem("token");
     let tampil_pagi = ref([]);
     let tampil_siang = ref([]);
     let tampil_malam = ref([]);
@@ -193,9 +194,11 @@ export default {
     const id_bangsal = route.params.id_bangsal;
     onMounted(() => {
       axios
-        .get(
-          `https://e-comstock.herokuapp.com/api/sisa/pasienPagi/${route.params.id}`
-        )
+        .get(`api/sisa/pasienPagi/${route.params.id}`, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
         .then((result1) => {
           tampil_pagi.value = result1.data;
         })
@@ -203,9 +206,11 @@ export default {
           console.log(err1.response);
         });
       axios
-        .get(
-          `https://e-comstock.herokuapp.com/api/sisa/pasienSiang/${route.params.id}`
-        )
+        .get(`/api/sisa/pasienSiang/${route.params.id}`, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
         .then((result2) => {
           tampil_siang.value = result2.data;
         })
@@ -213,9 +218,11 @@ export default {
           console.log(err2.response);
         });
       axios
-        .get(
-          `https://e-comstock.herokuapp.com/api/sisa/pasienMalam/${route.params.id}`
-        )
+        .get(`/api/sisa/pasienMalam/${route.params.id}`, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
         .then((result3) => {
           tampil_malam.value = result3.data;
         })

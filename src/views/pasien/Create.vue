@@ -56,6 +56,7 @@ import { useRouter } from "vue-router";
 import axios from "axios";
 export default {
   setup() {
+    let token = localStorage.getItem("token");
     const pasien = reactive({
       nama: "",
       id_bangsal: "",
@@ -63,16 +64,22 @@ export default {
     const validation = ref([]);
     const router = useRouter();
     function store() {
-      axios
-        .post("https://e-comstock.herokuapp.com/api/pasien", pasien)
-        .then(() => {
-          router.push({
-            name: "pasien.index",
+      axios.get("/sanctum/csrf-cookie").then(() => {
+        axios
+          .post("/api/pasien", pasien, {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          })
+          .then(() => {
+            router.push({
+              name: "pasien.index",
+            });
+          })
+          .catch((err) => {
+            validation.value = err.response.data;
           });
-        })
-        .catch((err) => {
-          validation.value = err.response.data;
-        });
+      });
     }
     return {
       pasien,

@@ -61,6 +61,7 @@ import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
 export default {
   setup() {
+    let token = localStorage.getItem("token");
     let pasien = reactive({
       nama: "",
       id_bangsal: "",
@@ -71,7 +72,11 @@ export default {
     const route = useRoute();
     onMounted(() => {
       axios
-        .get(`https://e-comstock.herokuapp.com/api/pasien/${route.params.id}`)
+        .get(`/api/pasien/${route.params.id}`, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
         .then((result) => {
           pasien.nama = result.data.data.nama;
           pasien.id_bangsal = result.data.data.id_bangsal;
@@ -81,20 +86,24 @@ export default {
           console.log(err.response.data);
         });
     });
+
     function update() {
-      axios
-        .put(
-          `https://e-comstock.herokuapp.com/api/pasien/${route.params.id}`,
-          pasien
-        )
-        .then(() => {
-          router.push({
-            name: "pasien.index",
+      axios.get("/sanctum/csrf-cookie").then(() => {
+        axios
+          .put(`api/pasien/${route.params.id}`, pasien, {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          })
+          .then(() => {
+            router.push({
+              name: "pasien.index",
+            });
+          })
+          .catch((err) => {
+            validation.value = err.response.data;
           });
-        })
-        .catch((err) => {
-          validation.value = err.response.data;
-        });
+      });
     }
     return {
       pasien,

@@ -233,25 +233,33 @@ import $ from "jquery";
 
 export default {
   setup() {
-    //reactive state
+    let token = localStorage.getItem("token");
     let bangsal = ref([]);
 
     onMounted(async () => {
-      await axios
-        .get("https://e-comstock.herokuapp.com/api/bangsal")
+      axios
+        .get("/api/bangsal", {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
         .then((result) => {
           bangsal.value = result.data;
         })
         .catch((err) => {
           console.log(err.response);
         });
+
       $("#rataMakanan").DataTable({
         searching: false,
         paging: false,
         info: false,
         ajax: {
-          url: "https://e-comstock.herokuapp.com/api/pasienAvgSisaMakanan",
+          url: "http://e-comstock.herokuapp.com/api/pasienAvgSisaMakanan",
           type: "GET",
+          headers: {
+            Authorization: "Bearer " + token,
+          },
         },
         dom: "Bfrtip",
         buttons: ["excel", "print"],
@@ -284,8 +292,11 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: "https://e-comstock.herokuapp.com/api/pasienAvgSisa",
+          url: "http://e-comstock.herokuapp.com/api/pasienAvgSisa",
           type: "GET",
+          headers: {
+            Authorization: "Bearer " + token,
+          },
         },
         dom: "Bfrtip",
         buttons: ["excel", "print"],
@@ -304,8 +315,11 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: "https://e-comstock.herokuapp.com/api/pasienAvgLengkap",
+          url: "http://e-comstock.herokuapp.com/api/pasienAvgLengkap",
           type: "GET",
+          headers: {
+            Authorization: "Bearer " + token,
+          },
         },
         dom: "Bfrtip",
         buttons: ["excel", "print"],

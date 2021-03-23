@@ -91,6 +91,7 @@ import { useRouter } from "vue-router";
 import axios from "axios";
 export default {
   setup() {
+    let token = localStorage.getItem("token");
     const bangsal = reactive({
       nama: "",
       siklus: "",
@@ -99,16 +100,22 @@ export default {
     const validation = ref([]);
     const router = useRouter();
     function store() {
-      axios
-        .post("https://e-comstock.herokuapp.com/api/bangsal", bangsal)
-        .then(() => {
-          router.push({
-            name: "pengisian.index",
+      axios.get("/sanctum/csrf-cookie").then(() => {
+        axios
+          .post("/api/bangsal", bangsal, {
+            headers: {
+              Authorization: "Bearer " + token,
+            },
+          })
+          .then(() => {
+            router.push({
+              name: "pengisian.index",
+            });
+          })
+          .catch((err) => {
+            validation.value = err.response.data;
           });
-        })
-        .catch((err) => {
-          validation.value = err.response.data;
-        });
+      });
     }
     return {
       bangsal,

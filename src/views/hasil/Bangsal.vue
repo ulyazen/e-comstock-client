@@ -182,26 +182,35 @@ import axios from "axios";
 
 export default {
   setup() {
+    let token = localStorage.getItem("token");
     const bangsal = reactive({
       nama_bangsal: "",
     });
     const route = useRoute();
     onMounted(() => {
       axios
-        .get(`https://e-comstock.herokuapp.com/api/bangsal/${route.params.id}`)
+        .get(`/api/bangsal/${route.params.id}`, {
+          headers: {
+            Authorization: "Bearer " + token,
+          },
+        })
         .then((result) => {
           bangsal.nama_bangsal = result.data.data.nama;
         })
         .catch((err) => {
           console.log(err.response.data);
         });
+
       $("#rataMakanan").DataTable({
         searching: false,
         paging: false,
         info: false,
         ajax: {
-          url: `https://e-comstock.herokuapp.com/api/pasienAvgSisaMakanan/${route.params.id}`,
+          url: `http://e-comstock.herokuapp.com/api/pasienAvgSisaMakanan/${route.params.id}`,
           type: "GET",
+          headers: {
+            Authorization: "Bearer " + token,
+          },
         },
         dom: "Bfrtip",
         buttons: ["excel", "print"],
@@ -235,8 +244,11 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: `https://e-comstock.herokuapp.com/api/pasienAvgSisa/${route.params.id}`,
+          url: `http://e-comstock.herokuapp.com/api/pasienAvgSisa/${route.params.id}`,
           type: "GET",
+          headers: {
+            Authorization: "Bearer " + token,
+          },
         },
         dom: "Bfrtip",
         buttons: ["excel", "print"],
@@ -256,8 +268,11 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: `https://e-comstock.herokuapp.com/api/pasienAvgLengkap/${route.params.id}`,
+          url: `http://e-comstock.herokuapp.com/api/pasienAvgLengkap/${route.params.id}`,
           type: "GET",
+          headers: {
+            Authorization: "Bearer " + token,
+          },
         },
         dom: "Bfrtip",
         buttons: ["excel", "print"],
