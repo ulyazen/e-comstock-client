@@ -76,6 +76,36 @@ const routes = [
         component: () => import("../views/pasien/Edit.vue"),
       },
       {
+        path: "/sisa/pagi",
+        name: "sisa_pagi.index",
+        component: () => import("../views/sisa_pagi/Index.vue"),
+      },
+      {
+        path: "/sisa/pagi/edit/:id",
+        name: "sisa_pagi.edit",
+        component: () => import("../views/sisa_pagi/Edit.vue"),
+      },
+      {
+        path: "/sisa/siang",
+        name: "sisa_siang.index",
+        component: () => import("../views/sisa_siang/Index.vue"),
+      },
+      {
+        path: "/sisa/siang/edit/:id",
+        name: "sisa_siang.edit",
+        component: () => import("../views/sisa_siang/Edit.vue"),
+      },
+      {
+        path: "/sisa/malam",
+        name: "sisa_malam.index",
+        component: () => import("../views/sisa_malam/Index.vue"),
+      },
+      {
+        path: "/sisa/malam/edit/:id",
+        name: "sisa_malam.edit",
+        component: () => import("../views/sisa_malam/Edit.vue"),
+      },
+      {
         path: "/hasil/",
         name: "hasil.index",
         component: () => import("../views/hasil/Index.vue"),

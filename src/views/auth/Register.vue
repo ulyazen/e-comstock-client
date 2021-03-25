@@ -2,8 +2,8 @@
   <div class="container h-100  vertical-center">
     <div class="row justify-content-center align-items-center h-100">
       <div class="col-xl-7 col-lg-12 col-md-6 mx-auto ">
-        <div class="card o-hidden border-0 shadow-sm ">
-          <div class="card-body p-0">
+        <div class="card o-hidden border-0 shadow-sm">
+          <div class="card-body p-0 shadow-sm border border-light rounded">
             <!-- Nested Row within Card Body -->
             <div class="row">
               <div class="col-lg-12 ">

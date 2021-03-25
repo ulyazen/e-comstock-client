@@ -57,7 +57,7 @@
           </table>
         </div>
         <div v-if="pasien.data == 0">
-          <p>Data Bangsal Pasien Diisi.</p>
+          <p>Data Bangsal Pasien Belum Diisi.</p>
         </div>
         <div v-if="pasien.length === 0" class="d-flex justify-content-center">
           <div class="spinner-border" role="status">

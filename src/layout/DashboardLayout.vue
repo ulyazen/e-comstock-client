@@ -7,6 +7,15 @@
         <dashboard-content> </dashboard-content>
       </div>
     </div>
+    <nav class="navbar navbar-dark bg-info navbar-expand fixed-bottom">
+      <ul class="navbar-nav nav-justified w-100">
+        <div class="d-flex align-items-center justify-content-between small">
+          <div class="text-white">
+            Copyright &copy; E-Comstock 2021
+          </div>
+        </div>
+      </ul>
+    </nav>
     <nav
       class="navbar navbar-dark bg-info navbar-expand d-md-none d-lg-none d-xl-none fixed-bottom"
     >

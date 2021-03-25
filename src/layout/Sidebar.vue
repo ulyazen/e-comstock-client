@@ -79,7 +79,7 @@
         <li class="nav-item">
           <router-link
             :to="{
-              name: 'pasien.index',
+              name: 'sisa_pagi.index',
             }"
             class="nav-link"
           >
@@ -89,7 +89,7 @@
         <li class="nav-item">
           <router-link
             :to="{
-              name: 'pasien.index',
+              name: 'sisa_siang.index',
             }"
             class="nav-link"
           >
@@ -99,7 +99,7 @@
         <li class="nav-item">
           <router-link
             :to="{
-              name: 'pasien.index',
+              name: 'sisa_malam.index',
             }"
             class="nav-link"
           >
