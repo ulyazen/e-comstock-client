@@ -79,7 +79,7 @@
 <script>
 import { reactive, ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
-
+import { inject } from "vue";
 import axios from "axios";
 export default {
   setup() {
@@ -89,6 +89,7 @@ export default {
       siklus: "",
       tanggal: "",
     });
+    const progressBar = inject("progressBar");
     const validation = ref([]);
     const router = useRouter();
     const route = useRoute();
@@ -103,13 +104,11 @@ export default {
           bangsal.nama = result.data.data.nama;
           bangsal.siklus = result.data.data.siklus;
           bangsal.tanggal = result.data.data.tanggal;
-        })
-        .catch((err) => {
-          console.log(err.response.data);
         });
     });
 
     function update() {
+      progressBar.start();
       axios.get("/sanctum/csrf-cookie").then(() => {
         axios
           .put(`/api/bangsal/${route.params.id}`, bangsal, {
@@ -118,11 +117,13 @@ export default {
             },
           })
           .then(() => {
+            progressBar.finish();
             router.push({
               name: "bangsal.index",
             });
           })
           .catch((err) => {
+            progressBar.fail();
             validation.value = err.response.data;
           });
       });

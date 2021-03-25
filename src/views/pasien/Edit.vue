@@ -57,10 +57,11 @@
 <script>
 import { reactive, ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
-
 import axios from "axios";
+import { inject } from "vue";
 export default {
   setup() {
+    const progressBar = inject("progressBar");
     let token = localStorage.getItem("token");
     let pasien = reactive({
       nama: "",
@@ -81,13 +82,11 @@ export default {
           pasien.nama = result.data.data.nama;
           pasien.id_bangsal = result.data.data.id_bangsal;
           pasien.no_rekam_medis = result.data.data.no_rekam_medis;
-        })
-        .catch((err) => {
-          console.log(err.response.data);
         });
     });
 
     function update() {
+      progressBar.start();
       axios.get("/sanctum/csrf-cookie").then(() => {
         axios
           .put(`api/pasien/${route.params.id}`, pasien, {
@@ -96,11 +95,13 @@ export default {
             },
           })
           .then(() => {
+            progressBar.finish();
             router.push({
               name: "pasien.index",
             });
           })
           .catch((err) => {
+            progressBar.fail();
             validation.value = err.response.data;
           });
       });

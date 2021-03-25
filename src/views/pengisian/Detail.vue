@@ -201,9 +201,6 @@ export default {
         })
         .then((result1) => {
           tampil_pagi.value = result1.data;
-        })
-        .catch((err1) => {
-          console.log(err1.response);
         });
       axios
         .get(`/api/sisa/pasienSiang/${route.params.id}`, {
@@ -213,10 +210,8 @@ export default {
         })
         .then((result2) => {
           tampil_siang.value = result2.data;
-        })
-        .catch((err2) => {
-          console.log(err2.response);
         });
+
       axios
         .get(`/api/sisa/pasienMalam/${route.params.id}`, {
           headers: {
@@ -225,9 +220,6 @@ export default {
         })
         .then((result3) => {
           tampil_malam.value = result3.data;
-        })
-        .catch((err3) => {
-          console.log(err3.response);
         });
     });
     return {

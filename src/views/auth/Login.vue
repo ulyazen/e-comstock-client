@@ -70,6 +70,7 @@
 import { reactive } from "vue";
 import { useRouter } from "vue-router";
 import axios from "axios";
+import { inject } from "vue";
 export default {
   data() {
     return {
@@ -79,6 +80,7 @@ export default {
     };
   },
   setup() {
+    const progressBar = inject("progressBar");
     const user = reactive({
       email: "",
       password: "",
@@ -89,10 +91,12 @@ export default {
 
     const router = useRouter();
     function login() {
+      progressBar.start();
       if (user.email.length > 0 && user.password.length > 0) {
         axios.get("/sanctum/csrf-cookie").then(() => {
           axios.post("/api/login", user).then((response) => {
             if (response.data.success) {
+              progressBar.finish();
               localStorage.setItem("loggedIn", "true");
 
               //set localStorage Token
@@ -100,10 +104,12 @@ export default {
 
               //change state
               this.loggedIn = true;
+
               router.push({
                 name: "dashboard.index",
               });
             } else if (!response.data.success) {
+              progressBar.fail();
               this.loginFailed = true;
               validation.error = response.data.message;
             }

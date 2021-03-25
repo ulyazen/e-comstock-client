@@ -89,8 +89,10 @@
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 import axios from "axios";
+import { inject } from "vue";
 export default {
   setup() {
+    const progressBar = inject("progressBar");
     let token = localStorage.getItem("token");
     const bangsal = reactive({
       nama: "",
@@ -100,6 +102,7 @@ export default {
     const validation = ref([]);
     const router = useRouter();
     function store() {
+      progressBar.start();
       axios.get("/sanctum/csrf-cookie").then(() => {
         axios
           .post("/api/bangsal", bangsal, {
@@ -108,11 +111,13 @@ export default {
             },
           })
           .then(() => {
+            progressBar.finish();
             router.push({
               name: "pengisian.index",
             });
           })
           .catch((err) => {
+            progressBar.fail();
             validation.value = err.response.data;
           });
       });

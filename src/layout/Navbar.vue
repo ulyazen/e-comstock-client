@@ -24,7 +24,7 @@
     <ul class="navbar-nav px-3">
       <li class="nav-item text-nowrap">
         <div @click="logout" class="nav-link border-light" href="#">
-          Sign out
+          Logout
         </div>
       </li>
     </ul>
@@ -41,6 +41,7 @@ export default {
   },
   methods: {
     logout() {
+      this.$Progress.start();
       axios
         .post(
           "/api/logout",
@@ -52,6 +53,7 @@ export default {
           }
         )
         .then(() => {
+          this.$Progress.finish();
           localStorage.removeItem("loggedIn");
           return this.$router.push({ name: "login" });
         });

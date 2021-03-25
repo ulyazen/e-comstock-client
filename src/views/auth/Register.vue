@@ -81,6 +81,7 @@
 import { reactive, ref } from "vue";
 import { useRouter } from "vue-router";
 import axios from "axios";
+import { inject } from "vue";
 export default {
   data() {
     return {
@@ -88,6 +89,7 @@ export default {
     };
   },
   setup() {
+    const progressBar = inject("progressBar");
     const user = reactive({
       name: "",
       email: "",
@@ -96,15 +98,18 @@ export default {
     const validation = ref([]);
     const router = useRouter();
     function register() {
+      progressBar.start();
       axios.get("/sanctum/csrf-cookie").then(() => {
         axios
           .post("/api/register", user)
           .then(() => {
+            progressBar.finish();
             router.push({
               name: "login",
             });
           })
           .catch((err) => {
+            progressBar.fail();
             validation.value = err.response.data;
           });
       });

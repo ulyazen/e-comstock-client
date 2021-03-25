@@ -495,6 +495,7 @@
 import { reactive, ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
+import { inject } from "vue";
 export default {
   data: function() {
     return {
@@ -513,7 +514,7 @@ export default {
       buah: "",
       snack: "",
     });
-
+    const progressBar = inject("progressBar");
     const validation = ref([]);
     const router = useRouter();
     const route = useRoute();
@@ -532,13 +533,11 @@ export default {
           pengisian.sayur = result.data.data.sayur;
           pengisian.buah = result.data.data.buah;
           pengisian.snack = result.data.data.snack;
-        })
-        .catch((err) => {
-          console.log(err.response);
         });
     });
 
     function update() {
+      progressBar.start();
       axios.get("/sanctum/csrf-cookie").then(() => {
         axios
           .put(`api/sisa/pagi/${route.params.id}`, pengisian, {
@@ -547,11 +546,13 @@ export default {
             },
           })
           .then(() => {
+            progressBar.finish();
             router.push({
               name: "sisa_pagi.index",
             });
           })
           .catch((err) => {
+            progressBar.fail();
             validation.value = err.response.data;
           });
       });

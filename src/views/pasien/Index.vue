@@ -72,12 +72,12 @@
 <script>
 import axios from "axios";
 import { onMounted, ref } from "vue";
-
+import { inject } from "vue";
 export default {
   setup() {
+    const progressBar = inject("progressBar");
     let token = localStorage.getItem("token");
     let pasien = ref([]);
-
     onMounted(() => {
       axios
         .get("/api/pasien", {
@@ -87,13 +87,11 @@ export default {
         })
         .then((result) => {
           pasien.value = result.data;
-        })
-        .catch((err) => {
-          console.log(err.response);
         });
     });
 
     function destroy(id, index) {
+      progressBar.start();
       axios.get("/sanctum/csrf-cookie").then(() => {
         axios
           .delete(`api/pasien/${id}`, {
@@ -102,10 +100,11 @@ export default {
             },
           })
           .then(() => {
+            progressBar.finish();
             pasien.value.data.splice(index, 1);
           })
-          .catch((err) => {
-            console.log(err.response.data);
+          .catch(() => {
+            progressBar.fail();
           });
       });
     }

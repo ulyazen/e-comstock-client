@@ -101,12 +101,12 @@
 <script>
 import axios from "axios";
 import { onMounted, ref } from "vue";
-
+import { inject } from "vue";
 export default {
   setup() {
     let token = localStorage.getItem("token");
     let sisa_pagi = ref([]);
-
+    const progressBar = inject("progressBar");
     onMounted(() => {
       axios
         .get("/api/sisa/pagi", {
@@ -116,13 +116,11 @@ export default {
         })
         .then((result) => {
           sisa_pagi.value = result.data;
-        })
-        .catch((err) => {
-          console.log(err.response);
         });
     });
 
     function destroy(id, index) {
+      progressBar.start();
       axios.get("/sanctum/csrf-cookie").then(() => {
         axios
           .delete(`api/sisa/pagi/${id}`, {
@@ -131,10 +129,11 @@ export default {
             },
           })
           .then(() => {
+            progressBar.finish();
             sisa_pagi.value.data.splice(index, 1);
           })
-          .catch((err) => {
-            console.log(err.response.data);
+          .catch(() => {
+            progressBar.fail();
           });
       });
     }

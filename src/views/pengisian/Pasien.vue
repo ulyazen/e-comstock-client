@@ -143,6 +143,7 @@
 import { reactive, ref, onMounted } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
+import { inject } from "vue";
 export default {
   data: function() {
     return {
@@ -150,6 +151,7 @@ export default {
     };
   },
   setup() {
+    const progressBar = inject("progressBar");
     let token = localStorage.getItem("token");
     const bangsal = reactive({
       nama_bangsal: "",
@@ -173,9 +175,6 @@ export default {
         .then((result) => {
           bangsal.nama_bangsal = result.data.data.nama;
           tambah_pasien.id_bangsal = result.data.data.id;
-        })
-        .catch((err) => {
-          console.log(err.response.data);
         });
 
       getData();
@@ -189,12 +188,10 @@ export default {
         })
         .then((result2) => {
           tampil.value = result2.data;
-        })
-        .catch((err2) => {
-          console.log(err2.response);
         });
     }
     function store() {
+      progressBar.start();
       axios.get("/sanctum/csrf-cookie").then(() => {
         axios
           .post("/api/pasien", tambah_pasien, {
@@ -203,9 +200,14 @@ export default {
             },
           })
           .then(() => {
+            progressBar.finish();
             tambah_pasien.nama = "";
             tambah_pasien.no_rekam_medis = "";
             getData();
+          })
+          .catch((err) => {
+            progressBar.fail();
+            validation.value = err.response.data;
           });
       });
     }

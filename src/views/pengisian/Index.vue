@@ -88,9 +88,6 @@ export default {
         })
         .then((result) => {
           bangsal.value = result.data;
-        })
-        .catch((err) => {
-          console.log(err.response);
         });
     });
 

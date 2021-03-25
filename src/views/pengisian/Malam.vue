@@ -498,8 +498,10 @@
 import { reactive, ref } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import axios from "axios";
+import { inject } from "vue";
 export default {
   setup() {
+    const progressBar = inject("progressBar");
     let token = localStorage.getItem("token");
     const pengisian = reactive({
       id_bangsal: "",
@@ -518,6 +520,7 @@ export default {
     pengisian.id_bangsal = route.params.id_bangsal;
     pengisian.id_pasien = route.params.id;
     function store() {
+      progressBar.start();
       axios.get("/sanctum/csrf-cookie").then(() => {
         axios
           .post("/api/sisa/malam", pengisian, {
@@ -526,11 +529,13 @@ export default {
             },
           })
           .then(() => {
+            progressBar.finish();
             router.push({
               name: "pengisian.detail",
             });
           })
           .catch((err) => {
+            progressBar.fail();
             validation.value = err.response.data;
           });
       });

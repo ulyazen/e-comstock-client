@@ -196,9 +196,6 @@ export default {
         })
         .then((result) => {
           bangsal.nama_bangsal = result.data.data.nama;
-        })
-        .catch((err) => {
-          console.log(err.response.data);
         });
 
       $("#rataMakanan").DataTable({
