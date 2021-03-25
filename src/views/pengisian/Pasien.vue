@@ -200,10 +200,10 @@ export default {
             },
           })
           .then(() => {
-            progressBar.finish();
             tambah_pasien.nama = "";
             tambah_pasien.no_rekam_medis = "";
             getData();
+            progressBar.finish();
           })
           .catch((err) => {
             progressBar.fail();
