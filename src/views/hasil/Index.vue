@@ -252,7 +252,7 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: `https://e-comstock.herokuapp.com/api/pasienAvgSisaMakanan/${id_user}`,
+          url: `https://e-comstock.herokuapp.com/api/pasienAvgSisaMakananUser/${id_user}`,
           type: "GET",
           headers: {
             Authorization: "Bearer " + token,
@@ -289,7 +289,7 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: `https://e-comstock.herokuapp.com/api/pasienAvgSisa/${id_user}`,
+          url: `https://e-comstock.herokuapp.com/api/pasienAvgSisaUser/${id_user}`,
           type: "GET",
           headers: {
             Authorization: "Bearer " + token,
@@ -312,7 +312,7 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: `https://e-comstock.herokuapp.com/api/pasienAvgLengkap/${id_user}`,
+          url: `https://e-comstock.herokuapp.com/api/pasienAvgLengkapUser/${id_user}`,
           type: "GET",
           headers: {
             Authorization: "Bearer " + token,
@@ -345,74 +345,6 @@ export default {
           { data: "ratarata_malam", name: "ratarata_malam" },
           { data: "ratarata", name: "ratarata" },
         ],
-        rowCallback: function(row, data) {
-          $("td:eq(1)", row).html(
-            parseFloat(data.makanan_pokok_pagi).toPrecision(3) + "%"
-          );
-          $("td:eq(2)", row).html(
-            parseFloat(data.lauk_hewani_pagi).toPrecision(3) + "%"
-          );
-          $("td:eq(3)", row).html(
-            parseFloat(data.lauk_nabati_pagi).toPrecision(3) + "%"
-          );
-          $("td:eq(4)", row).html(
-            parseFloat(data.sayur_pagi).toPrecision(3) + "%"
-          );
-          $("td:eq(5)", row).html(
-            parseFloat(data.buah_pagi).toPrecision(3) + "%"
-          );
-          $("td:eq(6)", row).html(
-            parseFloat(data.snack_pagi).toPrecision(3) + "%"
-          );
-          $("td:eq(7)", row).html(
-            parseFloat(data.ratarata_pagi).toPrecision(3) + "%"
-          );
-          $("td:eq(8)", row).html(
-            parseFloat(data.makanan_pokok_siang).toPrecision(3) + "%"
-          );
-          $("td:eq(9)", row).html(
-            parseFloat(data.lauk_hewani_siang).toPrecision(3) + "%"
-          );
-          $("td:eq(10)", row).html(
-            parseFloat(data.lauk_nabati_siang).toPrecision(3) + "%"
-          );
-          $("td:eq(11)", row).html(
-            parseFloat(data.sayur_siang).toPrecision(3) + "%"
-          );
-          $("td:eq(12)", row).html(
-            parseFloat(data.buah_siang).toPrecision(3) + "%"
-          );
-          $("td:eq(13)", row).html(
-            parseFloat(data.snack_siang).toPrecision(3) + "%"
-          );
-          $("td:eq(14)", row).html(
-            parseFloat(data.ratarata_siang).toPrecision(3) + "%"
-          );
-          $("td:eq(15)", row).html(
-            parseFloat(data.makanan_pokok_malam).toPrecision(3) + "%"
-          );
-          $("td:eq(16)", row).html(
-            parseFloat(data.lauk_hewani_malam).toPrecision(3) + "%"
-          );
-          $("td:eq(17)", row).html(
-            parseFloat(data.lauk_nabati_malam).toPrecision(3) + "%"
-          );
-          $("td:eq(18)", row).html(
-            parseFloat(data.sayur_malam).toPrecision(3) + "%"
-          );
-          $("td:eq(19)", row).html(
-            parseFloat(data.buah_malam).toPrecision(3) + "%"
-          );
-          $("td:eq(20)", row).html(
-            parseFloat(data.snack_malam).toPrecision(3) + "%"
-          );
-          $("td:eq(21)", row).html(
-            parseFloat(data.ratarata_malam).toPrecision(3) + "%"
-          );
-          $("td:eq(22)", row).html(
-            parseFloat(data.ratarata).toPrecision(3) + "%"
-          );
-        },
       });
     });
 
