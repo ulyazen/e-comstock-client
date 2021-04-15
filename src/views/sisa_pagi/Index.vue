@@ -110,7 +110,7 @@ export default {
     let id_user = localStorage.getItem("id_user");
     onMounted(() => {
       axios
-        .get(`/api/pagiU/${id_user}`, {
+        .get(`/api/pagiUser/${id_user}`, {
           headers: {
             Authorization: "Bearer " + token,
           },
