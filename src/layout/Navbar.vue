@@ -55,6 +55,7 @@ export default {
         .then(() => {
           this.$Progress.finish();
           localStorage.removeItem("loggedIn");
+          localStorage.removeItem("id_user");
           return this.$router.push({ name: "login" });
         });
     },

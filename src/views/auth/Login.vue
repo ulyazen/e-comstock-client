@@ -101,7 +101,7 @@ export default {
 
               //set localStorage Token
               localStorage.setItem("token", response.data.content.access_token);
-
+              localStorage.setItem("id_user", response.data.content.id_user);
               //change state
               this.loggedIn = true;
 

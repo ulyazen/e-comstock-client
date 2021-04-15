@@ -77,10 +77,10 @@ export default {
     const progressBar = inject("progressBar");
     let token = localStorage.getItem("token");
     let bangsal = ref([]);
-
+    let id_user = localStorage.getItem("token");
     onMounted(() => {
       axios
-        .get("/api/bangsal", {
+        .get(`/api/bangsalU/${id_user}`, {
           headers: {
             Authorization: "Bearer " + token,
           },

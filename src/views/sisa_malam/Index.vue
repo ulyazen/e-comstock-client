@@ -108,9 +108,10 @@ export default {
     let token = localStorage.getItem("token");
     let sisa_malam = ref([]);
     const progressBar = inject("progressBar");
+    let id_user = localStorage.getItem("token");
     onMounted(() => {
       axios
-        .get("/api/sisa/malam", {
+        .get(`/api/malamU/${id_user}`, {
           headers: {
             Authorization: "Bearer " + token,
           },

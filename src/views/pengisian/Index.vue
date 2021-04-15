@@ -78,10 +78,10 @@ export default {
   setup() {
     let token = localStorage.getItem("token");
     let bangsal = ref([]);
-
-    onMounted(async () => {
-      await axios
-        .get("/api/bangsal", {
+    let id_user = localStorage.getItem("token");
+    onMounted(() => {
+      axios
+        .get(`/api/bangsalU/${id_user}`, {
           headers: {
             Authorization: "Bearer " + token,
           },

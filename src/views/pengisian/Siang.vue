@@ -517,11 +517,13 @@ export default {
       sayur: "",
       buah: "",
       snack: "",
+      id_user: "",
     });
 
     const validation = ref([]);
     const router = useRouter();
     const route = useRoute();
+    pengisian.id_user = localStorage.getItem("id_user");
     pengisian.id_bangsal = route.params.id_bangsal;
     pengisian.id_pasien = route.params.id;
     function store() {

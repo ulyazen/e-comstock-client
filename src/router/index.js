@@ -51,11 +51,6 @@ const routes = [
         component: () => import("../views/bangsal/Index.vue"),
       },
       {
-        path: "/bangsal/create",
-        name: "bangsal.create",
-        component: () => import("../views/bangsal/Create.vue"),
-      },
-      {
         path: "/bangsal/edit/:id",
         name: "bangsal.edit",
         component: () => import("../views/bangsal/Edit.vue"),
@@ -64,11 +59,6 @@ const routes = [
         path: "/pasien",
         name: "pasien.index",
         component: () => import("../views/pasien/Index.vue"),
-      },
-      {
-        path: "/pasien/create",
-        name: "pasien.create",
-        component: () => import("../views/pasien/Create.vue"),
       },
       {
         path: "/pasien/edit/:id",

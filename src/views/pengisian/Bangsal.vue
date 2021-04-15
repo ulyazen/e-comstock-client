@@ -98,7 +98,9 @@ export default {
       nama: "",
       siklus: "",
       tanggal: "",
+      id_user: "",
     });
+    bangsal.id_user = localStorage.getItem("id_user");
     const validation = ref([]);
     const router = useRouter();
     function store() {

@@ -107,9 +107,10 @@ export default {
     let token = localStorage.getItem("token");
     let sisa_pagi = ref([]);
     const progressBar = inject("progressBar");
+    let id_user = localStorage.getItem("token");
     onMounted(() => {
       axios
-        .get("/api/sisa/pagi", {
+        .get(`/api/pagiU/${id_user}`, {
           headers: {
             Authorization: "Bearer " + token,
           },

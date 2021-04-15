@@ -160,11 +160,13 @@ export default {
       nama: "",
       id_bangsal: "",
       no_rekam_medis: "",
+      id_user: "",
     });
     let tampil = ref([]);
     const validation = ref([]);
     const router = useRouter();
     const route = useRoute();
+    tambah_pasien.id_user = localStorage.getItem("id_user");
     onMounted(() => {
       axios
         .get(`/api/bangsal/${route.params.id}`, {
