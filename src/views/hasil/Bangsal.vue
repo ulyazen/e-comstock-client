@@ -58,7 +58,11 @@
             >
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table" style="width: 100%" id="rataMakanan">
+                  <table
+                    class="table"
+                    style="width: 100%"
+                    id="rataMakananBangsal"
+                  >
                     <thead>
                       <tr>
                         <th>Nama Bangsal</th>
@@ -100,7 +104,7 @@
             >
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table" style="width: 100%" id="rata">
+                  <table class="table" style="width: 100%" id="rataBangsal">
                     <thead>
                       <tr>
                         <th>Nama Bangsal</th>
@@ -136,7 +140,11 @@
             >
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="table" style="width: 100%" id="rataLengkap">
+                  <table
+                    class="table"
+                    style="width: 100%"
+                    id="rataLengkapBangsal"
+                  >
                     <thead>
                       <tr>
                         <th>Nama Bangsal</th>
@@ -198,7 +206,7 @@ export default {
           bangsal.nama_bangsal = result.data.data.nama;
         });
 
-      $("#rataMakanan").DataTable({
+      $("#rataMakananBangsal").DataTable({
         searching: false,
         paging: false,
         info: false,
@@ -236,7 +244,7 @@ export default {
           $("td:eq(7)", row).html(parseFloat(data.snack).toPrecision(3) + "%");
         },
       });
-      $("#rata").DataTable({
+      $("#rataBangsal").DataTable({
         searching: false,
         paging: false,
         info: false,
@@ -260,7 +268,7 @@ export default {
           );
         },
       });
-      $("#rataLengkap").DataTable({
+      $("#rataLengkapBangsal").DataTable({
         searching: false,
         paging: false,
         info: false,
