@@ -78,7 +78,7 @@ export default {
     const progressBar = inject("progressBar");
     let token = localStorage.getItem("token");
     let pasien = ref([]);
-    let id_user = localStorage.getItem("token");
+    let id_user = localStorage.getItem("id_user");
     onMounted(() => {
       axios
         .get(`/api/pasienU/${id_user}`, {
