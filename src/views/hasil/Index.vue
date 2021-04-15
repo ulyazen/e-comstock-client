@@ -252,7 +252,7 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: "https://e-comstock.herokuapp.com/api/pasienAvgSisaMakanan",
+          url: `https://e-comstock.herokuapp.com/api/pasienAvgSisaMakanan/${id_user}`,
           type: "GET",
           headers: {
             Authorization: "Bearer " + token,
@@ -289,7 +289,7 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: "https://e-comstock.herokuapp.com/api/pasienAvgSisa",
+          url: `https://e-comstock.herokuapp.com/api/pasienAvgSisa/${id_user}`,
           type: "GET",
           headers: {
             Authorization: "Bearer " + token,
@@ -312,7 +312,7 @@ export default {
         paging: false,
         info: false,
         ajax: {
-          url: "https://e-comstock.herokuapp.com/api/pasienAvgLengkap",
+          url: `https://e-comstock.herokuapp.com/api/pasienAvgLengkap/${id_user}`,
           type: "GET",
           headers: {
             Authorization: "Bearer " + token,
