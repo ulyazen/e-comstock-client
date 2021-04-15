@@ -111,7 +111,7 @@ export default {
     let id_user = localStorage.getItem("id_user");
     onMounted(() => {
       axios
-        .get(`/api/malamUser/${id_user}`, {
+        .get(`/api/sisa/malamUser/${id_user}`, {
           headers: {
             Authorization: "Bearer " + token,
           },
