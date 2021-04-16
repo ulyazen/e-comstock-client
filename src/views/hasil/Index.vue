@@ -220,59 +220,59 @@
               </div>
             </div>
           </div>
-        </div>
-        <div class="card">
-          <div class="card-header" id="headingFive">
-            <h2 class="mb-0">
-              <button
-                class="btn btn-link btn-block text-left collapsed"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapseFive"
-                aria-expanded="false"
-                aria-controls="collapseFive"
-              >
-                Nilai Sisa Makanan Lengkap
-              </button>
-            </h2>
-          </div>
-          <div
-            id="collapseFive"
-            class="collapse"
-            aria-labelledby="headingFive"
-            data-parent="#accordionExample"
-          >
-            <div class="card-body">
-              <div class="table-responsive">
-                <table class="table" style="width: 100%" id="nilaiLengkap">
-                  <thead>
-                    <tr>
-                      <th>Nama</th>
-                      <th>Nomor Rekam Medis</th>
-                      <th>Siklus</th>
-                      <th>Tanggal</th>
-                      <th>Bangsal</th>
-                      <th>Makanan Pokok Pagi</th>
-                      <th>Lauk Hewani Pagi</th>
-                      <th>Lauk Nabati Pagi</th>
-                      <th>Sayur Pagi</th>
-                      <th>Buah Pagi</th>
-                      <th>Snack Pagi</th>
-                      <th>Makanan Pokok Siang</th>
-                      <th>Lauk Hewani Siang</th>
-                      <th>Lauk Nabati Siang</th>
-                      <th>Sayur Siang</th>
-                      <th>Buah Siang</th>
-                      <th>Snack Siang</th>
-                      <th>Makanan Pokok Malam</th>
-                      <th>Lauk Hewani Malam</th>
-                      <th>Lauk Nabati Malam</th>
-                      <th>Sayur Malam</th>
-                      <th>Buah Malam</th>
-                      <th>Snack Malam</th>
-                    </tr>
-                  </thead>
-                </table>
+          <div class="card">
+            <div class="card-header" id="headingFive">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link btn-block text-left collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  Nilai Sisa Makanan Lengkap
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseFive"
+              class="collapse"
+              aria-labelledby="headingFive"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table" style="width: 100%" id="nilaiLengkap">
+                    <thead>
+                      <tr>
+                        <th>Nama</th>
+                        <th>Nomor Rekam Medis</th>
+                        <th>Siklus</th>
+                        <th>Tanggal</th>
+                        <th>Bangsal</th>
+                        <th>Makanan Pokok Pagi</th>
+                        <th>Lauk Hewani Pagi</th>
+                        <th>Lauk Nabati Pagi</th>
+                        <th>Sayur Pagi</th>
+                        <th>Buah Pagi</th>
+                        <th>Snack Pagi</th>
+                        <th>Makanan Pokok Siang</th>
+                        <th>Lauk Hewani Siang</th>
+                        <th>Lauk Nabati Siang</th>
+                        <th>Sayur Siang</th>
+                        <th>Buah Siang</th>
+                        <th>Snack Siang</th>
+                        <th>Makanan Pokok Malam</th>
+                        <th>Lauk Hewani Malam</th>
+                        <th>Lauk Nabati Malam</th>
+                        <th>Sayur Malam</th>
+                        <th>Buah Malam</th>
+                        <th>Snack Malam</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
