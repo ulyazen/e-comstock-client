@@ -71,7 +71,7 @@
             <input
               type="date"
               class="form-control"
-              placeholder="yyyyy-mm-dd"
+              placeholder="yyyy-mm-dd"
               v-model="bangsal.tanggal"
             />
             <div v-if="validation.tanggal" class="text-danger">

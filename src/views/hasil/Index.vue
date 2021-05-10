@@ -23,6 +23,68 @@
       <div class="card-body">
         <div class="accordion" id="accordionExample">
           <div class="card">
+            <div class="card-header" id="headingFive">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link btn-block text-left collapsed"
+                  type="button"
+                  data-toggle="collapse"
+                  data-target="#collapseFive"
+                  aria-expanded="false"
+                  aria-controls="collapseFive"
+                >
+                  Nilai Sisa Makanan Lengkap
+                </button>
+              </h2>
+            </div>
+            <div
+              id="collapseFive"
+              class="collapse"
+              aria-labelledby="headingFive"
+              data-parent="#accordionExample"
+            >
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="table" style="width: 100%" id="nilaiLengkap">
+                    <thead>
+                      <div class="mb-3">
+                        <label for="" class="from-label"
+                          >Filter Berdasar Tanggal</label
+                        >
+                        <input id="tanggal" type="date" class="form-control" />
+                      </div>
+                      <tr>
+                        <th>Nama</th>
+                        <th>Nomor Rekam Medis</th>
+                        <th>Siklus</th>
+                        <th>Bangsal</th>
+                        <th>Tanggal</th>
+                        <th>Makanan Pokok Pagi</th>
+                        <th>Lauk Hewani Pagi</th>
+                        <th>Lauk Nabati Pagi</th>
+                        <th>Sayur Pagi</th>
+                        <th>Buah Pagi</th>
+                        <th>Snack Pagi</th>
+                        <th>Makanan Pokok Siang</th>
+                        <th>Lauk Hewani Siang</th>
+                        <th>Lauk Nabati Siang</th>
+                        <th>Sayur Siang</th>
+                        <th>Buah Siang</th>
+                        <th>Snack Siang</th>
+                        <th>Makanan Pokok Malam</th>
+                        <th>Lauk Hewani Malam</th>
+                        <th>Lauk Nabati Malam</th>
+                        <th>Sayur Malam</th>
+                        <th>Buah Malam</th>
+                        <th>Snack Malam</th>
+                      </tr>
+                    </thead>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
             <div class="card-header" id="headingOne">
               <h2 class="mb-0">
                 <button
@@ -33,7 +95,7 @@
                   aria-expanded="false"
                   aria-controls="collapseOne"
                 >
-                  Rata-rata Sisa Makanan Bedasarkan Bangsal
+                  Rata-rata Sisa Makanan Berdasarkan Bangsal
                 </button>
               </h2>
             </div>
@@ -89,6 +151,7 @@
               </div>
             </div>
           </div>
+
           <div class="card">
             <div class="card-header" id="headingTwo">
               <h2 class="mb-0">
@@ -100,7 +163,7 @@
                   aria-expanded="false"
                   aria-controls="collapseTwo"
                 >
-                  Rata-rata Sisa Makanan Bedasarkan Siklus dan Jenis Makanan
+                  Rata-rata Sisa Makanan Berdasarkan Siklus dan Jenis Makanan
                 </button>
               </h2>
             </div>
@@ -122,40 +185,6 @@
                         <th>Sayur</th>
                         <th>Buah</th>
                         <th>Snack</th>
-                      </tr>
-                    </thead>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingThree">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link btn-block text-left collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                  Rata-rata Sisa Makanan Bedasarkan Siklus
-                </button>
-              </h2>
-            </div>
-            <div
-              id="collapseThree"
-              class="collapse"
-              aria-labelledby="headingThree"
-              data-parent="#accordionExample"
-            >
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table" style="width: 100%" id="rata">
-                    <thead>
-                      <tr>
-                        <th>Siklus</th>
                         <th>Rata-rata</th>
                       </tr>
                     </thead>
@@ -220,62 +249,6 @@
               </div>
             </div>
           </div>
-          <div class="card">
-            <div class="card-header" id="headingFive">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link btn-block text-left collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseFive"
-                  aria-expanded="false"
-                  aria-controls="collapseFive"
-                >
-                  Nilai Sisa Makanan Lengkap
-                </button>
-              </h2>
-            </div>
-            <div
-              id="collapseFive"
-              class="collapse"
-              aria-labelledby="headingFive"
-              data-parent="#accordionExample"
-            >
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table" style="width: 100%" id="nilaiLengkap">
-                    <thead>
-                      <tr>
-                        <th>Nama</th>
-                        <th>Nomor Rekam Medis</th>
-                        <th>Siklus</th>
-                        <th>Tanggal</th>
-                        <th>Bangsal</th>
-                        <th>Makanan Pokok Pagi</th>
-                        <th>Lauk Hewani Pagi</th>
-                        <th>Lauk Nabati Pagi</th>
-                        <th>Sayur Pagi</th>
-                        <th>Buah Pagi</th>
-                        <th>Snack Pagi</th>
-                        <th>Makanan Pokok Siang</th>
-                        <th>Lauk Hewani Siang</th>
-                        <th>Lauk Nabati Siang</th>
-                        <th>Sayur Siang</th>
-                        <th>Buah Siang</th>
-                        <th>Snack Siang</th>
-                        <th>Makanan Pokok Malam</th>
-                        <th>Lauk Hewani Malam</th>
-                        <th>Lauk Nabati Malam</th>
-                        <th>Sayur Malam</th>
-                        <th>Buah Malam</th>
-                        <th>Snack Malam</th>
-                      </tr>
-                    </thead>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -324,6 +297,7 @@ export default {
           { data: "sayur", name: "sayur" },
           { data: "buah", name: "buah" },
           { data: "snack", name: "snack" },
+          { data: "ratarata", name: "ratarata" },
         ],
         rowCallback: function(row, data) {
           $("td:eq(1)", row).html(
@@ -338,27 +312,7 @@ export default {
           $("td:eq(4)", row).html(parseFloat(data.sayur).toPrecision(3) + "%");
           $("td:eq(5)", row).html(parseFloat(data.buah).toPrecision(3) + "%");
           $("td:eq(6)", row).html(parseFloat(data.snack).toPrecision(3) + "%");
-        },
-      });
-      $("#rata").DataTable({
-        searching: false,
-        paging: false,
-        info: false,
-        ajax: {
-          url: `https://e-comstock.herokuapp.com/api/pasienAvgSisaUser/${id_user}`,
-          type: "GET",
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        },
-        dom: "Bfrtip",
-        buttons: ["excel", "print"],
-        columns: [
-          { data: "siklus", name: "siklus" },
-          { data: "ratarata", name: "ratarata" },
-        ],
-        rowCallback: function(row, data) {
-          $("td:eq(1)", row).html(
+          $("td:eq(7)", row).html(
             parseFloat(data.ratarata).toPrecision(3) + "%"
           );
         },
@@ -470,8 +424,8 @@ export default {
           );
         },
       });
-      $("#nilaiLengkap").DataTable({
-        searching: false,
+
+      var table = $("#nilaiLengkap").DataTable({
         paging: false,
         info: false,
         ajax: {
@@ -529,6 +483,10 @@ export default {
           $("td:eq(22)", row).html(data.snack_malam + "%");
         },
       });
+      $("#tanggal").on("change", function() {
+        table.search(this.value).draw();
+      });
+      $(".dataTables_filter").hide();
     });
 
     return {

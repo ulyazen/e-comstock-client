@@ -33,16 +33,6 @@
         <li class="nav-item">
           <router-link
             :to="{
-              name: 'pengisian.bangsal',
-            }"
-            class="nav-link"
-          >
-            <i class="fas fa-file-alt text-light fa-lg"></i
-          ></router-link>
-        </li>
-        <li class="nav-item">
-          <router-link
-            :to="{
               name: 'pengisian.index',
             }"
             class="nav-link"

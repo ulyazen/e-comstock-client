@@ -101,7 +101,7 @@
           <h5><span class="badge badge-info">Tahap 6</span></h5>
           <p>
             Untuk melihat rata-rata hasil penilaian klik menu ‘Hasil Penilaian’
-            kemudian klik bar ‘rata-rata sisa makanan…….’ bedasarkan kelompok
+            kemudian klik bar ‘rata-rata sisa makanan…….’ berdasarkan kelompok
             data yang diinginkan
           </p>
         </div>

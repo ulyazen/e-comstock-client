@@ -73,42 +73,6 @@
                         <th>Sayur</th>
                         <th>Buah</th>
                         <th>Snack</th>
-                      </tr>
-                    </thead>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingThree">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link btn-block text-left collapsed"
-                  type="button"
-                  data-toggle="collapse"
-                  data-target="#collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree"
-                >
-                  Rata-rata Sisa Makanan Bedasarkan Siklus Bangsal
-                  {{ bangsal.nama_bangsal }}
-                </button>
-              </h2>
-            </div>
-            <div
-              id="collapseThree"
-              class="collapse"
-              aria-labelledby="headingThree"
-              data-parent="#accordionExample"
-            >
-              <div class="card-body">
-                <div class="table-responsive">
-                  <table class="table" style="width: 100%" id="rataBangsal">
-                    <thead>
-                      <tr>
-                        <th>Nama Bangsal</th>
-                        <th>Siklus</th>
                         <th>Rata-rata</th>
                       </tr>
                     </thead>
@@ -228,6 +192,7 @@ export default {
           { data: "sayur", name: "sayur" },
           { data: "buah", name: "buah" },
           { data: "snack", name: "snack" },
+          { data: "ratarata", name: "ratarata" },
         ],
         rowCallback: function(row, data) {
           $("td:eq(2)", row).html(
@@ -242,28 +207,7 @@ export default {
           $("td:eq(5)", row).html(parseFloat(data.sayur).toPrecision(3) + "%");
           $("td:eq(6)", row).html(parseFloat(data.buah).toPrecision(3) + "%");
           $("td:eq(7)", row).html(parseFloat(data.snack).toPrecision(3) + "%");
-        },
-      });
-      $("#rataBangsal").DataTable({
-        searching: false,
-        paging: false,
-        info: false,
-        ajax: {
-          url: `https://e-comstock.herokuapp.com/api/pasienAvgSisa/${route.params.id}`,
-          type: "GET",
-          headers: {
-            Authorization: "Bearer " + token,
-          },
-        },
-        dom: "Bfrtip",
-        buttons: ["excel", "print"],
-        columns: [
-          { data: "nama", name: "nama" },
-          { data: "siklus", name: "siklus" },
-          { data: "ratarata", name: "ratarata" },
-        ],
-        rowCallback: function(row, data) {
-          $("td:eq(2)", row).html(
+          $("td:eq(8)", row).html(
             parseFloat(data.ratarata).toPrecision(3) + "%"
           );
         },
