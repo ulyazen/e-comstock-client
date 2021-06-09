@@ -27,7 +27,7 @@
             }"
             class="nav-link"
           >
-            <i class="fas fa-home text-light fa-lg"></i>
+            <font-awesome-icon icon="home" size="lg" class="text-light" />
           </router-link>
         </li>
         <li class="nav-item">
@@ -37,8 +37,11 @@
             }"
             class="nav-link"
           >
-            <i class="fas fa-file-signature text-light fa-lg"></i
-          ></router-link>
+            <font-awesome-icon
+              icon="file-signature"
+              size="lg"
+              class="text-light"
+          /></router-link>
         </li>
         <router-link
           :to="{
@@ -46,8 +49,8 @@
           }"
           class="nav-link"
         >
-          <i class="fas fa-calculator text-light fa-lg"></i
-        ></router-link>
+          <font-awesome-icon icon="calculator" size="lg" class="text-light"
+        /></router-link>
       </ul>
     </nav>
   </div>

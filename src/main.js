@@ -14,8 +14,16 @@ import "datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js";
 import "datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css";
 import "datatables.net-buttons/js/buttons.html5.js";
 import "datatables.net-buttons/js/buttons.print.js";
-import "@fortawesome/fontawesome-free/css/all.min.css";
-import "@fortawesome/fontawesome-free/js/all.min.js";
+
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { faHome } from "@fortawesome/free-solid-svg-icons/faHome";
+import { faFileSignature } from "@fortawesome/free-solid-svg-icons/faFileSignature";
+import { faCalculator } from "@fortawesome/free-solid-svg-icons/faCalculator";
+import { faTachometerAlt } from "@fortawesome/free-solid-svg-icons/faTachometerAlt";
+import { faFileAlt } from "@fortawesome/free-solid-svg-icons/faFileAlt";
+library.add(faHome, faFileSignature, faCalculator, faTachometerAlt, faFileAlt);
+import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
+
 import axios from "axios";
 axios.defaults.baseURL = "https://e-comstock.herokuapp.com";
 axios.defaults.headers.common["X-Requested-With"] = "XMLHttpRequest";
@@ -35,6 +43,7 @@ const options = {
   inverse: false,
 };
 const app = createApp(App);
+app.component("font-awesome-icon", FontAwesomeIcon);
 app.use(router);
 app.use(VueProgressBar, options);
 app.provide("progressBar", app.config.globalProperties.$Progress);

@@ -9,7 +9,9 @@
   },
   "dependencies": {
     "@aacassandra/vue3-progressbar": "^1.0.3",
-    "@fortawesome/fontawesome-free": "^5.15.2",
+    "@fortawesome/fontawesome-svg-core": "^1.2.35",
+    "@fortawesome/free-solid-svg-icons": "^5.15.3",
+    "@fortawesome/vue-fontawesome": "^3.0.0-4",
     "axios": "^0.21.1",
     "bootstrap": "^4.6.0",
     "datatables.net-bs4": "^1.10.24",

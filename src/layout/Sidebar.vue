@@ -17,7 +17,7 @@
             }"
             class="nav-link"
           >
-            <i class="fas fa-tachometer-alt"></i> Dashboard</router-link
+            <font-awesome-icon icon="tachometer-alt" /> Dashboard</router-link
           >
         </li>
 
@@ -28,7 +28,7 @@
             }"
             class="nav-link"
           >
-            <i class="fas fa-file-alt"></i> Buat File Baru</router-link
+            <font-awesome-icon icon="file-alt" /> Buat File Baru</router-link
           >
         </li>
         <li class="nav-item">
@@ -38,7 +38,8 @@
             }"
             class="nav-link"
           >
-            <i class="fas fa-file-signature"></i> File Tersimpan</router-link
+            <font-awesome-icon icon="file-signature" /> File
+            Tersimpan</router-link
           >
         </li>
         <router-link
@@ -47,7 +48,7 @@
           }"
           class="nav-link"
         >
-          <i class="fas fa-calculator"></i> Hasil Peniliaian</router-link
+          <font-awesome-icon icon="calculator" /> Hasil Peniliaian</router-link
         >
       </ul>
       <h6
@@ -63,7 +64,7 @@
             }"
             class="nav-link"
           >
-            <i class="fas fa-file-alt"></i> Data Bangsal</router-link
+            <font-awesome-icon icon="file-alt" /> Data Bangsal</router-link
           >
         </li>
         <li class="nav-item">
@@ -73,7 +74,7 @@
             }"
             class="nav-link"
           >
-            <i class="fas fa-file-alt"></i> Data Pasien</router-link
+            <font-awesome-icon icon="file-alt" /> Data Pasien</router-link
           >
         </li>
         <li class="nav-item">
@@ -83,7 +84,8 @@
             }"
             class="nav-link"
           >
-            <i class="fas fa-file-alt"></i> Data Sisa Makanan Pagi</router-link
+            <font-awesome-icon icon="file-alt" /> Data Sisa Makanan
+            Pagi</router-link
           >
         </li>
         <li class="nav-item">
@@ -93,7 +95,8 @@
             }"
             class="nav-link"
           >
-            <i class="fas fa-file-alt"></i> Data Sisa Makanan Siang</router-link
+            <font-awesome-icon icon="file-alt" /> Data Sisa Makanan
+            Siang</router-link
           >
         </li>
         <li class="nav-item">
@@ -103,7 +106,8 @@
             }"
             class="nav-link"
           >
-            <i class="fas fa-file-alt"></i> Data Sisa Makanan Malam</router-link
+            <font-awesome-icon icon="file-alt" /> Data Sisa Makanan
+            Malam</router-link
           >
         </li>
       </ul>
